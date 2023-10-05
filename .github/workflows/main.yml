@@ -1,0 +1,26 @@
+on:
+  push:
+    branches:
+      -main
+name: JoSports
+jobs:
+  webdeploy:
+    name: JoSports Deploy
+    runs-on: Ubuntu-Latest
+    steps:
+      - name: Get Latest Code
+        uses: actions/checkout@v2
+
+      - name: Sync Files
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          # ftp server
+          server: stags.me 
+          # ftp username
+          username: ${{ secret.ftp_username }}
+          # ftp password
+          password: ${{ secret.ftp_username }}
+          # Server port to connect to (read your web hosts docs)
+          port: ${{ secret.ftp_password }}
+          # Path to upload to on the server. Must end with trailing slash /
+          server-dir: /JS_Staging
