@@ -1,10 +1,15 @@
 import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
+import { useFrame } from '@react-three/fiber'
 
-export function Fielder(props) {
+export function Fielder({rot}) {
+  const ref = useRef();
   const { nodes, materials } = useGLTF('/Models/fielders_glove_com.glb')
+  useFrame(() => {
+    ref.current.rotation.y = rot
+  })
   return (
-    <group {...props} scale={[6, 6, 6]} dispose={null}>
+    <group scale={[6, 6, 6]} dispose={null} ref={ref}>
       <group position={[0.435, 0, -0.427]}>
         <mesh geometry={nodes.middle_finger_pad1.geometry} material={materials.lambert1} scale={0.025} />
       </group>
