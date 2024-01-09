@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/josports/wp-content/reactpress/apps/configurator/build/static/css/main.1692d4d8.css",
+    "main.js": "/josports/wp-content/reactpress/apps/configurator/build/static/js/main.f124d289.js",
+    "static/media/bg-layer.jpg": "/josports/wp-content/reactpress/apps/configurator/build/static/media/bg-layer.2d1dd15bf34b188410ea.jpg",
+    "static/media/left.svg": "/josports/wp-content/reactpress/apps/configurator/build/static/media/left.1cea82937e55ba1e2fc0.svg",
+    "static/media/right.svg": "/josports/wp-content/reactpress/apps/configurator/build/static/media/right.58128f2b0162a21c36e9.svg",
+    "static/media/right-arrow.svg": "/josports/wp-content/reactpress/apps/configurator/build/static/media/right-arrow.2c34fafc5c6c64f43cb8.svg",
+    "static/media/left-arrow.svg": "/josports/wp-content/reactpress/apps/configurator/build/static/media/left-arrow.d833be4a83b41ea0bc4a.svg",
+    "static/media/slick.svg": "/josports/wp-content/reactpress/apps/configurator/build/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/josports/wp-content/reactpress/apps/configurator/build/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/josports/wp-content/reactpress/apps/configurator/build/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/josports/wp-content/reactpress/apps/configurator/build/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/josports/wp-content/reactpress/apps/configurator/build/index.html",
+    "main.1692d4d8.css.map": "/josports/wp-content/reactpress/apps/configurator/build/static/css/main.1692d4d8.css.map",
+    "main.f124d289.js.map": "/josports/wp-content/reactpress/apps/configurator/build/static/js/main.f124d289.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1692d4d8.css",
+    "static/js/main.f124d289.js"
+  ]
+}

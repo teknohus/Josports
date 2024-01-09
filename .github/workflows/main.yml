@@ -17,4 +17,4 @@ jobs:
           server: stags.me
           username: ${{ secrets.ftp_username }}
           password: ${{ secrets.ftp_password }}
-          server-dir: /JS_Staging/
+          server-dir: /legendgloves/
