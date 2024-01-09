@@ -20,11 +20,11 @@ export default function Main() {
 
   const handleTabClick = (type) => {
     setCurrentTab(type);
-  };
+  }
 
   const BarNavToggle = () => {
     setIsBarOpen((prevIsBarOpen) => !prevIsBarOpen);
-  };
+  }
 
   const handleColorChange = (meshName, newColor) => {
     setTextures((prevData) => ({
@@ -35,7 +35,7 @@ export default function Main() {
       ...prevColors,
       [meshName]: newColor,
     }));
-  };
+  }
 
   const handleTextureChange = (meshName, img) => {
     setColors((prevColors) => ({
@@ -47,7 +47,7 @@ export default function Main() {
       [meshName]: img,
     }));
 
-  };
+  }
 
   const handlePeronalizeChangeText = (e) => {
     let value = e.target.value;
@@ -456,11 +456,7 @@ export default function Main() {
     }
 
 
-  };
-
-  const handleTabChange = (tab) => {
-    setCurrentTab(tab);
-  };
+  }
 
   const handlePreviousClick = (data, current, setCurrent, steps) => {
     const keys = Object.keys(data);
@@ -811,15 +807,150 @@ export default function Main() {
                     </div>
                   </div>
                 )}
-
+                
                 {currentTab === "Personalize" && (
-                  <div
-                    className="tab-pane fade"
-                    id="pills-contact"
-                    role="tabpanel"
-                    aria-labelledby="pills-contact-tab"
-                  >
-                    personalise Tab content
+                  <div className="Base">
+                    <div
+                      className="tab-pane fade show active"
+                      id="pills-home"
+                      role="tabpanel"
+                      aria-labelledby="pills-home-tab"
+                    >
+                      <ul className="d-flex justify-content-around">
+                        <li>2 remaining</li>
+                        <li>19 remaining</li>
+                        <li>1 remaining</li>
+                      </ul>
+                      <div className="variants-categories-block position-relative">
+                        <div className="variants-categories d-flex justify-content-center">
+                          <div className="variants-category active">
+                            <span> {currentPersonlize} </span>
+                          </div>
+                          <div className="variants-category">
+                            <span>Palm Stamp</span> 
+                          </div>
+                          <div className="variants-category">
+                            <span>Thumb Text</span> 
+                          </div>
+                          <div className="variants-category">
+                            <span>Pinky Text</span> 
+                          </div>
+                        </div>
+                        <button className="vc-arrows vc-left" onClick={() => {handlePreviousClick(personlizeConfig, currentPersonlize, setCurrentPersonlize, personilzeSteps)}} disabled={Object.keys(personlizeConfig).indexOf(currentPersonlize) === 0} />
+                        <button className="vc-arrows vc-right" onClick={() => {handleNextClick(personlizeConfig, currentPersonlize, setCurrentPersonlize, personilzeSteps)}} disabled={Object.keys(personlizeConfig).indexOf(currentPersonlize) ===  Object.keys(personlizeConfig).length - 1} />
+                      </div>
+                      <div className="data-card">
+                        <div className="data-head d-flex justify-content-between">
+                          <h2 className="title">{currentPersonlize}:</h2>
+                          <a
+                            href="/"
+                            className="product-guid d-flex align-items-center"
+                          >
+                            <img
+                              className="me-1"
+                              src={`/images/help.svg`}
+                              alt="Help"
+                            />
+                            help
+                          </a>
+                        </div>
+                        <div className="options-area ">
+                          <form action="#" method className="d-flex flex-wrap">
+                            <div className="row">
+                              {data[currentPersonlize].options && (
+                                <>
+                                  {(data[currentPersonlize].options).map(option => (
+                                    <div className="col-md-4">
+                                        <label className="hb-label-cust">
+                                          {option}
+                                          <input
+                                            type="radio"
+                                            id={`radio-${option}`}
+                                            defaultChecked="checked"
+                                            name="option-radio"
+                                            checked={personlizeConfig[currentPersonlize] === option}
+                                            onClick={()=>{handlePeronalizeChange(currentPersonlize, option)}}
+                                          />
+                                          <span className="checkmark" />
+                                      </label>
+                                    </div>
+                                  ))}
+                                </>
+                              )}
+                              {data[currentPersonlize].textbox && (
+                                <>
+                                  {data[currentPersonlize].texttype === "number" && (
+                                    <input className = "rounded-full px-6 w-full focus:ring-0 border-gray-300 focus:border-gray-300" 
+                                      type="number" 
+                                      placeholder={currentPersonlize}
+                                      max="99"
+                                      min="0"
+                                      value= {personlizeConfig[currentPersonlize]}
+                                      onChange={handlePeronalizeChangeText}
+                                    />
+                                  )}
+                                  {data[currentPersonlize].texttype === "text" && (
+                                    <>
+                                      <input className = "rounded-full px-6 w-full focus:ring-0 border-gray-300 focus:border-gray-300" 
+                                        type="text" 
+                                        placeholder={currentPersonlize}
+                                        maxLength="17"
+                                        minLength="0"
+                                        value= {personlizeConfig[currentPersonlize + " Text"]}
+                                        onChange={handlePeronalizeChangeText}
+                                      />
+                                    </>
+                                  )}
+                                <br/>
+                                </>
+                              )}
+                              <br/>
+                              {data[currentPersonlize].colors && (
+                                <>
+                                  {Object.entries(data[currentPersonlize].colors).map(([label, color]) => (
+                                    <div className="col-md-4">
+                                      <div
+                                        key={color}
+                                        className={`color-option ${
+                                          personlizeConfig[currentPersonlize + " Color"] === color ? "selected" : ""
+                                        }`}
+                                        style={{ backgroundColor: color }}
+                                        onClick={() => {handlePeronalizeChangeColor(currentPersonlize, color)}}
+                                      /> 
+                                      <div className="color-label">
+                                        {label} 
+                                      </div>
+                                  </div>
+                                  ))}
+                                  <br/>
+                                </>
+                              )}
+                              {data[currentPersonlize].icons && (
+                                <>
+                                  {Object.entries(data[currentPersonlize].icons).map(([label, img]) => (
+                                    <div className="col-md-4">
+                                      <img
+                                        className={`texture-option ${
+                                          personlizeConfig[currentPersonlize] === label ? "selected" : ""
+                                        }`}
+                                        key={img}
+                                        src={img}
+                                        alt={label}
+                                        onClick={()=>{handlePeronalizeChange(currentPersonlize, label)}}
+                                      />
+                                      <div className="texture-label">
+                                        {label}
+                                      </div>
+                                    </div>
+                                  ))}
+                                  <br/>
+                                </>
+                              )}
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 )}
 
