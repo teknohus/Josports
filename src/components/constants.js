@@ -568,7 +568,7 @@ export const meshOptions = {
 
   export const colorData = {
     binding: "#E2E2E2",
-    "Home Plate": "#E2E2E2",
+    "Home Plate": "E2E2E2",
     finger_hood: "#E2E2E2",
     finger_pad: "#E2E2E2",
     inlay: "#E2E2E2",

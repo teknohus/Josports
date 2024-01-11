@@ -132,7 +132,7 @@ const EmbroideredLogo = ({ geometry, material, color, position, rotation, scale,
 // };
 
 
-export function FielderGlove({rot, base, colors, personalize, personalizeConfig, xPosition, yPosition, zPosition, xRotation, yRotation, zRotation, textures }) {
+export function New({rot, base, colors, personalize, personalizeConfig, xPosition, yPosition, zPosition, xRotation, yRotation, zRotation, textures }) {
   const ref = useRef();
   const { nodes, materials } = useGLTF('./Model/Fielder.glb')
   

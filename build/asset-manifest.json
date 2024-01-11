@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.0b67d1fd.css",
-    "main.js": "/static/js/main.3563ca88.js",
+    "main.css": "/static/css/main.4e98c744.css",
+    "main.js": "/static/js/main.062c8d2b.js",
     "static/media/a_skin.png": "/static/media/a_skin.af62c3a717fc93adf4d3.png",
     "static/media/inlay_initialShadingGroup_Diffuse.png": "/static/media/inlay_initialShadingGroup_Diffuse.a0f266f6c82f689be04d.png",
     "static/media/snake skin brown.png": "/static/media/snake skin brown.408b2e4cb640cb253b16.png",
@@ -81,11 +81,11 @@
     "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
-    "main.0b67d1fd.css.map": "/static/css/main.0b67d1fd.css.map",
-    "main.3563ca88.js.map": "/static/js/main.3563ca88.js.map"
+    "main.4e98c744.css.map": "/static/css/main.4e98c744.css.map",
+    "main.062c8d2b.js.map": "/static/js/main.062c8d2b.js.map"
   },
   "entrypoints": [
-    "static/css/main.0b67d1fd.css",
-    "static/js/main.3563ca88.js"
+    "static/css/main.4e98c744.css",
+    "static/js/main.062c8d2b.js"
   ]
 }
