@@ -458,6 +458,17 @@ export default function Main() {
 
   }
 
+  const resetConfig = () => {
+    setBaseConfig(baseOptions);
+    setBaseSteps(baseStepsConfig)
+    setColors(colorData);
+    setColorSteps(colorStepsConfig);
+    setTextures(textureData);
+    setPersonalizeSteps(personlizationConfig)
+    setPersonlizeConfig(personlizationOptions)
+    setData(Options)
+  }
+
   const handlePreviousClick = (data, current, setCurrent, steps) => {
     const keys = Object.keys(data);
     
@@ -514,7 +525,7 @@ export default function Main() {
                 >
                   <img src={`/images/menu.svg`} alt="Ham" />
                 </button>
-                <button type="button" className="btn">
+                <button type="button" className="btn" onClick={resetConfig}>
                   reset
                 </button>
               </div>
@@ -798,8 +809,6 @@ export default function Main() {
                                   ))} 
                                 </div> 
                               )}
-
-
                             </div>
                           </form>
                         </div>

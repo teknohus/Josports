@@ -178,8 +178,6 @@ import Script from "../assets/fonts/Brush Script Bold.ttf"
 import Outlinefont from "../assets/fonts/Milestone Outline.otf"
 import Bold from "../assets/fonts/HergonGrotesk-Medium.ttf"
 
-export const img = peace
-
 export const flags = {
   "USA": USA,
   "Korea": Korea,
