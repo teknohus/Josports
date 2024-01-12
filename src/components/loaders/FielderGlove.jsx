@@ -115,11 +115,19 @@ const BackFlag = ({ nodes, materials, position, rotation, scale, personalize }) 
   );
 };
 
-const EmbroideredLogo = ({ geometry, material, color, position, rotation, scale, texture }) => {
+const EmbroideredLogo = ({ geometry, material, color, position, rotation, scale, texture, tsize=1}) => {
   const textureMap = useTexture(flags[texture]);
+  const map = useMemo(() => {
+    const map = textureMap.clone() 
+    map.repeat.set(tsize, tsize)
+    map.wrapS = THREE.RepeatWrapping 
+    map.wrapT = THREE.RepeatWrapping  
+    return map
+  }, [textureMap, tsize])
+  
   return (
     <mesh geometry={geometry} material={material} material-color={color} position={position} rotation={rotation} scale={scale} >
-      <meshBasicMaterial map={textureMap} />
+      <meshBasicMaterial map={map} />
     </mesh> 
   );
 };
@@ -1232,7 +1240,7 @@ export function New({rot, base, colors, personalize, personalizeConfig, xPositio
         <>
           <mesh geometry={nodes.circle_logo001.geometry} material-color={colors.wristPlate} material={materials.Circle_Logo} rotation={[Math.PI / 2, 0, 0]} scale={0.01} />
           <mesh geometry={nodes.logo_stitch_round.geometry} material-color={colors.Stiches} material={materials['Logo Stitches']} rotation={[Math.PI / 2, 0, 0]} scale={0.01} />
-          <EmbroideredLogo geometry={nodes.flag_logo.geometry} material={materials.logo_with_outline1} rotation={[Math.PI / 2, 0, 0]} scale={0.01} texture={base.embroidered_flag}/>
+          <EmbroideredLogo geometry={nodes.flag_logo.geometry} material={materials.logo_with_outline1} rotation={[Math.PI / 2, 0, 0]} scale={0.01} texture={base.embroidered_flag} tsize={2}/>
           {/* <mesh geometry={nodes.flag_logo.geometry} material={materials.logo_with_outline1} rotation={[Math.PI / 2, 0, 0]} scale={0.01} >
              <meshBasicMaterial map={textureMap} />
           </mesh> */}
