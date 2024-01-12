@@ -77,6 +77,19 @@ import hat from '../assets/Graphics/hat.png'
 import hotdog from '../assets/Graphics/hotdog.png'
 import ilovetacos from '../assets/Graphics/ilovetacos.png'
 import toofast from '../assets/Graphics/Speed Gun 99mph.png'
+import dragon from '../assets/Graphics/Dragon.png';
+import eagle from '../assets/Graphics/Eagle.png';
+import lumbre from '../assets/Graphics/Lumbre.png'; 
+import dog from '../assets/Graphics/Dog.png';
+import rhino from '../assets/Graphics/Rhino.png';
+import angrybull from '../assets/Graphics/Angry Bull.png';
+import lion from '../assets/Graphics/Lion.png';
+import wolf from '../assets/Graphics/Wolf.png';
+import goat from '../assets/Graphics/Goat.png';
+import luckyshoe from '../assets/Graphics/Lucky Shoe.png'; 
+import fries from '../assets/Graphics/Fries.png';
+import donut from '../assets/Graphics/Dounut.png';
+import pirateflag from '../assets/Graphics/Pirate Flag.png';
 import usa_stamp from '../assets/stamp_flag/usa.png'
 import arizona_stamp from '../assets/stamp_flag/arizona.png'
 import australia_stamp from '../assets/stamp_flag/australia.png'
@@ -238,6 +251,19 @@ export const thumb_premium_graphics = {
   "Golden Sombrero" : hat,
   "Cross" : cross1,
   "Too Fast" : toofast,
+  "Dragon": dragon,
+  "Eagle": eagle,
+  "Lumbre": lumbre,
+  "Dog": dog,
+  "Rhino": rhino,
+  "Angry Bull": angrybull, 
+  "Lion": lion,
+  "Wolf": wolf,
+  "Goat": goat,
+  "Lucky shoe": luckyshoe,
+  "Fries": fries,
+  "Donut": donut,
+  "Pirate Flag": pirateflag,
 }
 
 export const fonts = {
@@ -858,13 +884,13 @@ export const meshOptions = {
     "Thumb Graphic": {
       textbox: false,
       options: null,
-      icons: {"Cross" : cross, "Star of David" : star_david, "Reverse K" : reverse_k, "Ribbon" : ribbon, "Heart" : heart, "Paw Print" : paw, "Maple Leaf" : maple, "Star" : star, "Lightning Bolt" : light_bolt, "Peace" : peace, "Shaka" : shaka,},
+      icons: {"Cross" : cross, "Star of David" : star_david, "Reverse K" : reverse_k, "Ribbon" : ribbon, "Heart" : heart, "Paw Print" : paw, "Maple Leaf" : maple, "Star" : star, "Lightning Bolt" : light_bolt, "Peace" : peace, "Shaka" : shaka, "Crown" : crown, "Baseball Bats": baseballbats,},
       colors: null,
     },
     "Premium Graphic": {
       textbox: false,
       options: null,
-      icons: {"Hot Dog" : hotdog, "I Love Tacos" : ilovetacos, "Cannon" : cannon, "Champion" : champion, "Goodluck Charm" : greenclover, "Golden Sombrero" : hat, "Cross" : cross1, "Too Fast" : toofast},
+      icons: {"Hot Dog" : hotdog, "I Love Tacos" : ilovetacos, "Cannon" : cannon, "Champion" : champion, "Goodluck Charm" : greenclover, "Golden Sombrero" : hat, "Cross" : cross1, "Too Fast" : toofast, "Dragon": dragon, "Eagle": eagle, "Lumbre": lumbre, "Dog": dog, "Rhino": rhino, "Angry Bull": angrybull, "Lion": lion, "Wolf": wolf, "Goat": goat, "Lucky shoe": luckyshoe, "Fries": fries, "Donut": donut, "Pirate Flag": pirateflag,},
       colors: null,
     } ,
     "Jumbo Number": {
