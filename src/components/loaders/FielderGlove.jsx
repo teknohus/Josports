@@ -241,7 +241,7 @@ export function New({rot, base, colors, personalize, personalizeConfig, xPositio
         <>
           <Text
             font={Outlinefont}
-            position={[-0.017, 0.067, 0.021]}
+            position={[-0.012, 0.071, 0.021]}
             rotation={[0.0625*Math.PI, -1.125*Math.PI, -0.03125*Math.PI]}
             color={"#707070"}
             scale={0.01}
@@ -254,7 +254,7 @@ export function New({rot, base, colors, personalize, personalizeConfig, xPositio
         <>
           <Text
             font={Outlinefont}
-            position={[-0.017, 0.067, 0.021]}
+            position={[-0.012, 0.071, 0.021]}
             rotation={[0.0625*Math.PI, -1.125*Math.PI, -0.03125*Math.PI]}
             color={"#707070"}
             scale={0.024}
@@ -265,8 +265,7 @@ export function New({rot, base, colors, personalize, personalizeConfig, xPositio
       )}
       {personalize["Palm Stamp"] === "Graphic" && (
         <>
-          <PalmGraphic nodes={nodes} materials={materials} position={[-0.016, 0.067, 0.019]} rotation={[-0.3125*Math.PI, -0.09375*Math.PI, -1.125*Math.PI]} personalize={personalize} scale={0.020} />
-        </>
+          <PalmGraphic nodes={nodes} materials={materials} position={[-0.012, 0.075, 0.019]} rotation={[-0.4375*Math.PI, -0.0625*Math.PI, -1.125*Math.PI]} personalize={personalize} scale={0.020} />        </>
       )}
 
       {/*CrownPatch*/}

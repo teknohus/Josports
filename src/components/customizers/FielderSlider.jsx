@@ -22,7 +22,7 @@ function CameraControl() {
 
 }
 
-const ProductSlideshow = ({rot, baseConfig, colors, personlizeConfig, personlizationConfig, textures}) => {
+const ProductSlideshow = ({rot, baseConfig, colors, personlizeConfig, personlizationConfig, textures, xPosition, yPosition, zPosition, xRotation, yRotation, zRotation }) => {
   const mainSlider = useRef(null);
   const navSlider = useRef(null);
   // const [rotationValue, setRotationValue] = useState(Math.PI);
@@ -72,7 +72,7 @@ const ProductSlideshow = ({rot, baseConfig, colors, personlizeConfig, personliza
         <ambientLight intensity={0.3} color={'#ffffff'} />
         <directionalLight intensity={0.25 * Math.PI} color={'#ffffff'} position={[0, 0, 0.866]} />
         <directionalLight intensity={0.25 * Math.PI} color={'#ffffff'} position={[0, 0, -0.866]} />
-        <New rot={rotation * (Math.PI / 2)} base={baseConfig} colors={colors} textures={textures} personalize={personlizeConfig} personalizeConfig={personlizationConfig} flags={flags} />
+        <New rot={rotation * (Math.PI / 2)} base={baseConfig} colors={colors} textures={textures} personalize={personlizeConfig} personalizeConfig={personlizationConfig} flags={flags} xPosition={xPosition} yPosition={yPosition} zPosition={zPosition} xRotation={xRotation} yRotation={yRotation} zRotation={zRotation} />
       </scene>
     </Canvas>
   );

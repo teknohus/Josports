@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import ProductSlideshow from "./FielderSlider";
 import { meshOptions, colorData, colorPalette, tabs, textureData, colorStepsConfig, baseOptions, personlizationOptions, personlizationConfig, Options, baseStepsConfig } from "../constants";
+import Controls from "../controls"
 
 export default function Main() {
   const [currentTab, setCurrentTab] = useState(tabs[0]);
@@ -17,6 +18,13 @@ export default function Main() {
   const [personlizeConfig, setPersonlizeConfig] = useState(personlizationOptions);
   const [currentPersonlize, setCurrentPersonlize] = useState("Thumb Logo/Graphic");
   const [data, setData] = useState(Options)
+
+  const [xPosition, setXPosition] = useState(9.25);
+  const [yPosition, setYPosition] = useState(0.039);
+  const [zPosition, setZPosition] = useState(0.023);
+  const [xRotation, setXRotation] = useState(2.915);
+  const [yRotation, setYRotation] = useState(1.132);
+  const [zRotation, setZRotation] = useState(-0.6625);
 
   const handleTabClick = (type) => {
     setCurrentTab(type);
@@ -969,6 +977,22 @@ export default function Main() {
                 >
 
                 </div>
+                  {/* <Controls
+                    controls={{
+                      xPosition,
+                      yPosition,
+                      zPosition,
+                      xRotation,
+                      yRotation,
+                      zRotation,
+                      setXPosition,
+                      setYPosition,
+                      setZPosition,
+                      setXRotation,
+                      setYRotation,
+                      setZRotation,
+                    }}
+                  /> */}
               </div>
               <div className="add-cart-box">
                 <button href="#" className="btn btn-secondry">
@@ -981,7 +1005,7 @@ export default function Main() {
               </div>
             </div>
 
-            <ProductSlideshow baseConfig={baseConfig} colors={colors} textures={textures} personlizeConfig={personlizeConfig} personlizationConfig={personlizationConfig}/>
+            <ProductSlideshow baseConfig={baseConfig} colors={colors} textures={textures} personlizeConfig={personlizeConfig} personlizationConfig={personlizationConfig} xPosition={xPosition} yPosition={yPosition} zPosition={zPosition} xRotation={xRotation} yRotation={yRotation} zRotation={zRotation} />
           </div>
         </div>
       </div>
