@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.4e98c744.css",
-    "main.js": "/static/js/main.a0145214.js",
+    "main.js": "/static/js/main.d0fb0cb0.js",
     "static/media/Hot Pink Snakeskin Art Spots.png": "/static/media/Hot Pink Snakeskin Art Spots.5d024125c1f223c7321f.png",
     "static/media/Pink Snakeskin Art Spots.png": "/static/media/Pink Snakeskin Art Spots.729afb2b28386d110305.png",
     "static/media/Teal Snakeskin Art Spots.png": "/static/media/Teal Snakeskin Art Spots.027269bef9d21274a9d2.png",
@@ -98,10 +98,10 @@
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
     "main.4e98c744.css.map": "/static/css/main.4e98c744.css.map",
-    "main.a0145214.js.map": "/static/js/main.a0145214.js.map"
+    "main.d0fb0cb0.js.map": "/static/js/main.d0fb0cb0.js.map"
   },
   "entrypoints": [
     "static/css/main.4e98c744.css",
-    "static/js/main.a0145214.js"
+    "static/js/main.d0fb0cb0.js"
   ]
 }

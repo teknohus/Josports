@@ -56,6 +56,8 @@ import Puerto_Rico from '../assets/logo_flag/Puerto_Rico.png'
 import Venezuela from '../assets/logo_flag/Venezuela.png'
 import Netherlands from '../assets/logo_flag/Netherlands.png'
 import clover from '../assets/Graphics/clover.png'
+import crown from '../assets/Graphics/Crown.png'
+import baseballbats from '../assets/Graphics/Baseball Bats.png'
 import cross from '../assets/Graphics/cross.png'
 import cross1 from '../assets/Graphics/cross1.png'
 import star_david from '../assets/Graphics/star_david.png'
@@ -223,6 +225,8 @@ export const thumb_graphics = {
   "Lightning Bolt" : light_bolt,
   "Peace" : peace,
   "Shaka" : shaka,
+  "Crown" : crown,
+  "Baseball Bats": baseballbats,
 }
 
 export const thumb_premium_graphics = {
