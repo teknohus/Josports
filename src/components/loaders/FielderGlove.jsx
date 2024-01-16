@@ -398,7 +398,7 @@ export function New({rot, base, colors, personalize, personalizeConfig, xPositio
       <mesh geometry={nodes.polySurface313.geometry} material-color={colors.palm} material={weltMaterial} rotation={[Math.PI / 2, 0, 0]} scale={0.01} />  */}
 
       {/*Side Logo*/}
-      {base.inlay !== "Inlay" && (
+      {base.inlay !== "Inlay (+$15)" && (
         <>
           {personalize["Thumb Logo/Graphic"] === "Home Plate Logo" && (
             <>
@@ -1236,7 +1236,7 @@ export function New({rot, base, colors, personalize, personalizeConfig, xPositio
         </>
       )}
 
-      {base.logo_style === "Embroidered Flag" && (
+      {base.logo_style === "Embroidered Flag (+$7)" && (
         <>
           <mesh geometry={nodes.circle_logo001.geometry} material-color={colors.wristPlate} material={materials.Circle_Logo} rotation={[Math.PI / 2, 0, 0]} scale={0.01} />
           <mesh geometry={nodes.logo_stitch_round.geometry} material-color={colors.Stiches} material={materials['Logo Stitches']} rotation={[Math.PI / 2, 0, 0]} scale={0.01} />

@@ -1,37 +1,227 @@
-import React from "react";
-import { useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import ProductSlideshow from "./FielderSlider";
-import { meshOptions, colorData, colorPalette, tabs, textureData, colorStepsConfig, baseOptions, personlizationOptions, personlizationConfig, Options, baseStepsConfig } from "../constants";
+import { meshOptions, baseReq, colorReq, personlizationReq, colorData, colorPalette, allColors, texturePalette, tabs, textureData, colorStepsConfig, baseOptions, personlizationOptions, personlizationConfig, Options, baseStepsConfig } from "../constants";
 import Controls from "../controls"
+
+const saveToFile = (data, fileName) => {
+  const jsonContent = JSON.stringify(data, null, 2);
+  const blob = new Blob([jsonContent], { type: 'application/json' });
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(blob);
+  link.download = fileName;
+  link.click();
+};
+
+function usePricing(baseConfig, personalizeConfig) {
+
+  const [price, setPrice] = useState(229);
+
+  
+  useEffect(() => {
+    const priceAffectingOptions = {
+      logoStyle: baseConfig.logo_style,  
+      inlay: baseConfig.inlay,  
+      thumb: personalizeConfig["Thumb Logo/Graphic"]
+    }
+
+    let newPrice = 229;
+    
+    if(priceAffectingOptions.logoStyle === "Embroidered Flag (+$7)") {
+       newPrice += 7; 
+    }
+    if(priceAffectingOptions.inlay === "Inlay (+$15)") {
+       newPrice += 15; 
+    }
+    if(priceAffectingOptions.thumb === "Graphic (+$7)") {
+       newPrice += 7; 
+    }
+    if(priceAffectingOptions.thumb === "Premium Graphic (+$15)") {
+       newPrice += 15; 
+    }
+    if(priceAffectingOptions.thumb === "Jumbo Number (+$7)") {
+       newPrice += 7; 
+    }
+    if(priceAffectingOptions.thumb === "Stamped Flag (+$7)") {
+       newPrice += 7; 
+    }
+    if(priceAffectingOptions.thumb === "Thumb Flag (+$7)") {
+       newPrice += 7; 
+    }
+    if(priceAffectingOptions.thumb === "Custom Plate Number (+$7)") {
+       newPrice += 7; 
+    }
+
+    setPrice(newPrice);
+
+  }, [baseConfig.logo_style, baseConfig.inlay, personalizeConfig])
+
+  return { price }; // return price for usage
+
+}
 
 export default function Main() {
   const [currentTab, setCurrentTab] = useState(tabs[0]);
   const [isBarOpen, setIsBarOpen] = useState(false);
+  const [searchText, setSearchText] = useState('');
   const [currentMesh, setCurrentMesh] = useState("binding");
   const [colors, setColors] = useState(colorData);
   const [textures, setTextures] = useState(textureData);
   const [colorSteps, setColorSteps] = useState(colorStepsConfig);
+  const [colorRequired, setColorRequired] = useState(colorReq);
   const [currentBase, setCurrentBase] = useState("size");
   const [baseConfig, setBaseConfig] = useState(baseOptions);
   const [baseSteps, setBaseSteps] = useState(baseStepsConfig);
+  const [baseRequired, setBaseRequired] = useState(baseReq);
   const [personilzeSteps, setPersonalizeSteps] = useState(personlizationConfig);
   const [personlizeConfig, setPersonlizeConfig] = useState(personlizationOptions);
+  const [personalizedRequired, setPersonalizedRequired] = useState(personlizationReq);
   const [currentPersonlize, setCurrentPersonlize] = useState("Thumb Logo/Graphic");
   const [data, setData] = useState(Options)
+  const [screenshots, setScreenshots] = useState([]);
+  const {price} = usePricing(baseConfig, personlizeConfig);  
 
+  const baseEnabled = useMemo(() => {
+    return Object.fromEntries(
+      Object.entries(baseConfig)
+        .filter(([key]) => baseSteps[key])
+    );
+  }, [baseConfig, baseSteps]) 
+
+  const colorEnabled = useMemo(() => {
+    return Object.fromEntries(
+      Object.entries(colors)
+        .filter(([key]) => colorSteps[key])
+    );
+  }, [colors, colorSteps]) 
+
+  const personalizeEnabled = useMemo(() => {
+    return Object.fromEntries(
+      Object.entries(personlizeConfig)
+        .filter(([key]) => personilzeSteps[key])
+    );
+  }, [personlizeConfig, personilzeSteps]) 
+  
   const [xPosition, setXPosition] = useState(9.25);
   const [yPosition, setYPosition] = useState(0.039);
   const [zPosition, setZPosition] = useState(0.023);
   const [xRotation, setXRotation] = useState(2.915);
   const [yRotation, setYRotation] = useState(1.132);
   const [zRotation, setZRotation] = useState(-0.6625);
+  
+  useEffect(() =>{
+    if (personlizeConfig["Thumb Text"] === "Thumb Text" && personlizeConfig["Thumb Text Text"] !== ""){
+      setPersonalizedRequired(prevState => ({
+        ...prevState,  
+        "Thumb Text": false
+      }));
+    }
+    if (personlizeConfig["Thumb Text"] === "Thumb Text" && personlizeConfig["Thumb Text Text"] === ""){
+      setPersonalizedRequired(prevState => ({
+        ...prevState,  
+        "Thumb Text": true
+      }));
+    }
+    if (personlizeConfig["Pinky Text"] === "Pinky Text" && personlizeConfig["Pinky Text Text"] !== ""){
+      setPersonalizedRequired(prevState => ({
+        ...prevState,  
+        "Pinky Text": false
+      }));
+    }
+    if (personlizeConfig["Pinky Text"] === "Pinky Text" && personlizeConfig["Pinky Text Text"] === ""){
+      setPersonalizedRequired(prevState => ({
+        ...prevState,  
+        "Pinky Text": true
+      }));
+    }
+    if (personlizeConfig["Palm Text"] === "Palm Text" && personlizeConfig["Palm Text Text"] !== ""){
+      setPersonalizedRequired(prevState => ({
+        ...prevState,  
+        "Palm Text": false
+      }));
+    }
+    if (personlizeConfig["Palm Text"] === "Palm Text" && personlizeConfig["Palm Text Text"] === ""){
+      setPersonalizedRequired(prevState => ({
+        ...prevState,  
+        "Palm Text": true
+      }));
+    }
+    if (personlizeConfig["Thumb Logo/Graphic"] === "Jumbo Number (+$7)" && personlizeConfig["Jumbo Number"] !== ""){
+      setPersonalizedRequired(prevState => ({
+        ...prevState,  
+        "Jumbo Number": false
+      }));
+    }
+    if (personlizeConfig["Thumb Logo/Graphic"] === "Jumbo Number (+$7)" && personlizeConfig["Jumbo Number"] === ""){
+      setPersonalizedRequired(prevState => ({
+        ...prevState,  
+        "Jumbo Number": true
+      }));
+    }
+    if (personlizeConfig["Thumb Logo/Graphic"] === "Custom Plate Number (+$7)" && personlizeConfig["Custom Plate Number"] !== ""){
+      setPersonalizedRequired(prevState => ({
+        ...prevState,  
+        "Custom Plate Number": false
+      }));
+    }
+    if (personlizeConfig["Thumb Logo/Graphic"] === "Custom Plate Number (+$7)" && personlizeConfig["Custom Plate Number"] === ""){
+      setPersonalizedRequired(prevState => ({
+        ...prevState,  
+        "Custom Plate Number": true
+      }));
+    }
+    if (personlizeConfig["Palm Stamp"] === "Custom Number" && personlizeConfig["Palm Custom Number"] !== ""){
+      setPersonalizedRequired(prevState => ({
+        ...prevState,  
+        "Palm Custom Number": false
+      }));
+    }
+    if (personlizeConfig["Palm Stamp"] === "Custom Number" && personlizeConfig["Palm Custom Number"] === ""){
+      setPersonalizedRequired(prevState => ({
+        ...prevState,  
+        "Palm Custom Number": true
+      }));
+    }
+  },[personlizeConfig])
 
   const handleTabClick = (type) => {
     setCurrentTab(type);
   }
 
+  const format_Text = (text) => {
+    return text
+          .replace(/_/g, ' ')
+          .replace(/(?:^|\s)\S/g, (match) => match.toUpperCase())
+          .replace(/([a-z])([A-Z])/g, '$1 $2')
+          .replace(/(\d)/g, ' $1');
+  }
+
   const BarNavToggle = () => {
     setIsBarOpen((prevIsBarOpen) => !prevIsBarOpen);
+  }
+
+  const filterData = (data) => {
+    if (!searchText) return Object.fromEntries(data);
+    const filteredData = Object.fromEntries(
+      data.filter(([key, value]) =>
+        key.toLowerCase().includes(searchText.toLowerCase())
+      )
+    );
+    return filteredData;
+  } 
+  
+  const handleNavBase = (key) => {
+    setCurrentTab(tabs[0])
+    setCurrentBase(key)
+  }
+  
+  const handleNavColor = (key) => {
+    setCurrentTab(tabs[1])
+    setCurrentMesh(key)
+  }
+
+  const handleNavPersonalization = (key) => {
+    setCurrentTab(tabs[2])
+    setCurrentPersonlize(key)
   }
 
   const handleColorChange = (meshName, newColor) => {
@@ -42,6 +232,10 @@ export default function Main() {
     setColors((prevColors) => ({
       ...prevColors,
       [meshName]: newColor,
+    }));
+    setColorRequired(prevSteps => ({
+      ...prevSteps,
+      [meshName]: false
     }));
   }
 
@@ -54,7 +248,10 @@ export default function Main() {
       ...prevData,
       [meshName]: img,
     }));
-
+    setColorRequired(prevSteps => ({
+      ...prevSteps,
+      [meshName]: false
+    }));
   }
 
   const handlePeronalizeChangeText = (e) => {
@@ -78,7 +275,6 @@ export default function Main() {
         [currentPersonlize + " Text"]: value,
       }));
     }
-
   }
 
   const handlePeronalizeChangeColor = (option, value) => {
@@ -101,7 +297,7 @@ export default function Main() {
         "Thumb Text": {
           ...thumbText, 
           textbox: value === "Thumb Text",
-          colors: value === "Thumb Text" ? colorPalette : null
+          colors: value === "Thumb Text" ? allColors : null
         } 
       }))  
     }
@@ -112,7 +308,7 @@ export default function Main() {
         "Pinky Text": {
           ...pinkyText, 
           textbox: value === "Pinky Text",
-          colors: value === "Pinky Text" ? colorPalette : null
+          colors: value === "Pinky Text" ? allColors : null
         } 
       }))  
     }
@@ -123,7 +319,7 @@ export default function Main() {
         "Palm Text": {
           ...palmText, 
           textbox: value === "Palm Text",
-          colors: value === "Palm Text" ? colorPalette : null
+          colors: value === "Palm Text" ? allColors : null
         } 
       }))  
     }
@@ -154,10 +350,18 @@ export default function Main() {
         ...prevSteps,
         "Home Plate": true
       }));
+      setPersonalizedRequired(prevSteps => ({
+        ...prevSteps,
+        "Custom Plate Number": true
+      }));
     } else if(option === 'Thumb Logo/Graphic' && value !== 'Custom Plate Number (+$7)') {
       setColorSteps(prevSteps => ({
         ...prevSteps,
         "Home Plate": false
+      }));
+      setPersonalizedRequired(prevSteps => ({
+        ...prevSteps,
+        "Custom Plate Number": false
       }));
     }
 
@@ -188,10 +392,18 @@ export default function Main() {
         ...prevSteps,
        "Jumbo Number": true
       }));
+      setPersonalizedRequired(prevSteps => ({
+        ...prevSteps,
+        "Jumbo Number": true
+      }));
     } else if(option === 'Thumb Logo/Graphic' && value !== 'Jumbo Number (+$7)') {
       setPersonalizeSteps(prevSteps => ({
         ...prevSteps,
        "Jumbo Number": false
+      }));
+      setPersonalizedRequired(prevSteps => ({
+        ...prevSteps,
+        "Jumbo Number": false
       }));
     }
     if(option === 'Thumb Logo/Graphic' && value === 'Stamped Flag (+$7)') {
@@ -232,10 +444,18 @@ export default function Main() {
         ...prevSteps,
        "Palm Custom Number": true
       }));
+      setPersonalizedRequired(prevSteps => ({
+        ...prevSteps,
+        "Palm Custom Number": true
+      }));
     } else if(option === 'Palm Stamp' && value !== 'Custom Number') {
       setPersonalizeSteps(prevSteps => ({
         ...prevSteps,
        "Palm Custom Number": false
+      }));
+      setPersonalizedRequired(prevSteps => ({
+        ...prevSteps,
+        "Palm Custom Number": false
       }));
     }
     if(option === 'Palm Stamp' && value === 'Graphic') {
@@ -249,7 +469,42 @@ export default function Main() {
        "Palm Graphic": false
       }));
     }
-
+    if (option === 'Thumb Text' && value === null){
+      setPersonalizedRequired(prevSteps => ({
+        ...prevSteps,
+        "Thumb Text": false
+      }));
+    }
+    else if (option === 'Thumb Text' && value === "Thumb Text"){
+      setPersonalizedRequired(prevSteps => ({
+        ...prevSteps,
+        "Thumb Text": true
+      }));
+    }
+    if (option === 'Pinky Text' && value === null){
+      setPersonalizedRequired(prevSteps => ({
+        ...prevSteps,
+        "Pinky Text": false
+      }));
+    }
+    else if (option === 'Pinky Text' && value === "Pinky Text"){
+      setPersonalizedRequired(prevSteps => ({
+        ...prevSteps,
+        "Pinky Text": true
+      }));
+    }
+    if (option === 'Palm Text' && value === null){
+      setPersonalizedRequired(prevSteps => ({
+        ...prevSteps,
+        "Palm Text": false
+      }));
+    }
+    else if (option === 'Palm Text' && value === "Palm Text"){
+      setPersonalizedRequired(prevSteps => ({
+        ...prevSteps,
+        "Palm Text": true
+      }));
+    }
   }
 
   const handleBaseChange = (option, value) => {
@@ -263,12 +518,19 @@ export default function Main() {
     }));
 
     // Update baseSteps when logo_style changes
-    if(option === 'logo_style' && value === 'Embroidered Flag') {
+    if(option === 'logo_style' && value === 'Embroidered Flag (+$7)') {
       setBaseSteps(prevSteps => ({
         ...prevSteps,
         embroidered_flag: true
       }));
-    } else if(option === 'logo_style' && value !== 'Embroidered Flag') {
+      setBaseSteps((prevSteps) => ({
+        ...prevSteps,
+        embroidered_flag: {
+          ...prevSteps.embroidered_flag,
+          value: true,
+        },
+      }));
+    } else if(option === 'logo_style' && value !== 'Embroidered Flag (+$7)') {
       setBaseSteps(prevSteps => ({
         ...prevSteps,  
         embroidered_flag: false
@@ -371,12 +633,12 @@ export default function Main() {
       }));
     }
 
-    if(option === 'inlay' && value === 'Inlay') {
+    if(option === 'inlay' && value === 'Inlay (+$15)') {
       setColorSteps(prevSteps => ({
         ...prevSteps,
         inlay: true
       }));
-    } else if(option === 'inlay' && value !== 'Inlay') {
+    } else if(option === 'inlay' && value !== 'Inlay (+$15)') {
       setColorSteps(prevSteps => ({
         ...prevSteps,
         inlay: false
@@ -463,7 +725,28 @@ export default function Main() {
       }));
     }
 
-
+    if(option === 'glove_stiffness' && value !== null) {
+      setBaseRequired(prevSteps => ({
+        ...prevSteps,
+        "glove_stiffness": false
+      }));
+    } else if(option === 'glove_stiffness' && value === null) {
+      setBaseRequired(prevSteps => ({
+        ...prevSteps,
+        "glove_stiffness": true
+      }));
+    }
+    if(option === 'throwing_hand' && value !== null) {
+      setBaseRequired(prevSteps => ({
+        ...prevSteps,
+        "throwing_hand": false
+      }));
+    } else if(option === 'throwing_hand' && value === null) {
+      setBaseRequired(prevSteps => ({
+        ...prevSteps,
+        "throwing_hand": true
+      }));
+    }
   }
 
   const resetConfig = () => {
@@ -475,6 +758,9 @@ export default function Main() {
     setPersonalizeSteps(personlizationConfig)
     setPersonlizeConfig(personlizationOptions)
     setData(Options)
+    setBaseRequired(baseReq)
+    setColorRequired(colorReq)
+    setPersonalizedRequired(personlizationReq)
   }
 
   const handlePreviousClick = (data, current, setCurrent, steps) => {
@@ -516,6 +802,168 @@ export default function Main() {
     setCurrent(keys[index]);
   }
 
+  const captureScreenshot = () => {
+    const canvasElements = document.getElementsByTagName('canvas');
+    const compositeCanvas = document.createElement('canvas');
+    const compositeContext = compositeCanvas.getContext('2d');
+  
+    // Set the size of the composite canvas
+    compositeCanvas.width = 1000; // 2 * 500 (width of each individual side)
+    compositeCanvas.height = 1000; // 2 * 500 (height of each individual side)
+  
+    // Iterate through each canvas and draw it onto the composite canvas
+    for (let i = 0; i < canvasElements.length; i++) {
+      const sideCanvas = document.createElement('canvas');
+      sideCanvas.width = 500;
+      sideCanvas.height = 500;
+      const sideContext = sideCanvas.getContext('2d');
+  
+      // Fill the individual side canvas with white background
+      sideContext.fillStyle = '#ffffff'; // White color
+      sideContext.fillRect(0, 0, sideCanvas.width, sideCanvas.height);
+  
+      // Draw the content of the original canvas onto the individual side canvas
+      sideContext.drawImage(canvasElements[i], 0, 0, 500, 500);
+  
+      // Draw the individual side canvas onto the composite canvas
+      compositeContext.drawImage(sideCanvas, i % 2 * 500, Math.floor(i / 2) * 500);
+    }
+  
+    // Convert the composite canvas to data URL
+    const screenshot = compositeCanvas.toDataURL();
+    setScreenshots([...screenshots, screenshot]);
+
+    return screenshot
+  
+    // Download the composite screenshot
+    // const link = document.createElement('a');
+    // link.href = screenshot;
+    // link.download = 'composite_screenshot.png';
+    // link.click();
+  };
+
+  const getFormData = () => {
+    const enabledBaseOptions = Object.fromEntries(
+      Object.entries(baseConfig)
+        .filter(([key]) => baseSteps[key])
+        .map(([key, value]) => [format_Text(key), value === null ? "No" : value])
+    );
+    
+    const enabledColorOptions = Object.fromEntries(
+      Object.entries(colors)
+        .filter(([key]) => colorSteps[key])
+        .map(([key, colorCode]) => {
+          const colorName = Object.entries(colorPalette)
+            .find(([name, code]) => code === colorCode)?.[0];
+          const textureName =  Object.entries(texturePalette)
+            .find(([name, code]) => code === textures[key])?.[0];
+    
+          return [
+            textureName ? `${format_Text(key)} Texture` : `${format_Text(key)} Color`, textureName ? textureName : colorName,
+          ];
+        })
+    );
+
+    const enabledPersonalizationOptions = Object.fromEntries(
+      Object.entries(personlizeConfig)
+        .filter(([key]) => personilzeSteps[key])
+        .flatMap(([key, value]) => {
+          if (key === "Thumb Logo/Graphic" && value === "Jumbo Number (+$7)") {
+            const newKey = value.split(' ')[0] + " " + value.split(' ')[1]
+            const colorCode = personlizeConfig[`${newKey} Color`]
+            const colorName = Object.entries(colorPalette).find(([name, code]) => code === colorCode)?.[0]
+            return [
+              [key, value],
+              [`${newKey} Color`, colorName || "Default Black"]
+            ];
+          } else if (key === "Thumb Logo/Graphic" && value === "Custom Plate Number (+$7)") {
+            const newKey = value.split(' ')[0] + " " + value.split(' ')[1] + " " + value.split(' ')[2]
+            const colorCode = personlizeConfig[`${newKey} Color`]
+            const colorName = Object.entries(colorPalette).find(([name, code]) => code === colorCode)?.[0]
+            return [
+              [key, value],
+              [`${newKey} Color`, colorName || "Default Black"]
+            ];
+          } else if (key === value) {
+            const colorCode = personlizeConfig[`${key} Color`]
+            const colorName = Object.entries(colorPalette).find(([name, code]) => code === colorCode)?.[0]
+            return [
+              [key, personlizeConfig[`${key} Text`] || "None"],
+              [`${key} Color`, colorName || "Default Black"]
+            ];
+          } else {
+            return [[key, value === null ? "No" : value]];
+          }
+        })
+    );
+
+    // const screenshot = captureScreenshot();
+
+    return {
+      ...enabledBaseOptions,
+      ...enabledColorOptions,
+      ...enabledPersonalizationOptions,
+      // screenshot: screenshot,
+      // price: price,
+    };
+  }
+
+  const HandleCheckout = async () => {
+    // if (baseLeft+personalizeLeft+colorLeft > 0) {
+    //   return 
+    // }
+
+    const formData = getFormData()
+
+    saveToFile(formData, "formData")
+
+    const body = JSON.stringify(formData);
+
+    try {
+      // setLoading(true);
+  
+      const res = await fetch('/checkout', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body  
+      });
+  
+      if(!res.ok) {
+        throw new Error('Submit failed'); 
+      }
+  
+      // submitted successfully
+      // setLoading(false);
+      // setOrderStatus('Order placed successfully!');
+      console.log('Order Placed successfully')
+  
+    } catch (err) {
+      
+      // setLoading(false);
+      
+      if(err.response && err.response.data) {
+        // server responded with an error 
+        // setError(err.response.data);
+        console.log(err.response.data)
+      } else {
+        // request failed or no response
+        // setError('Submission failed, please try again');  
+        console.log("Submission failed, please try again")
+      }
+    }
+
+    // console.log("Checkout Complete")
+    // console.log(formData)
+  }  
+  
+  const filteredBaseConfig = filterData(Object.entries(baseConfig)); 
+  const filteredColorConfig = filterData(Object.entries(colors)); 
+  const filteredPersonalizeConfig = filterData(Object.entries(personlizeConfig)); 
+  const baseLeft = Object.values(baseRequired).filter((value, index) => baseSteps[Object.keys(baseRequired)[index]] && value).length;
+  const colorLeft = Object.values(colorRequired).filter((value, index) => colorSteps[Object.keys(colorRequired)[index]] && value).length;
+  const personalizeLeft = Object.values(personalizedRequired).filter((value, index) => personilzeSteps[Object.keys(personalizedRequired)[index]] && value).length;
 
   return (
     <main id="main">
@@ -568,7 +1016,8 @@ export default function Main() {
                           type="search form-control"
                           id="asign-search"
                           list="datalistOptions"
-                          placeholder="Jane Doe"
+                          value={searchText}
+                          onChange={(e) => setSearchText(e.target.value)} 
                         />
                       </div>
                     </div>
@@ -593,23 +1042,76 @@ export default function Main() {
                   </form>
                   <div className="heading">
                     <h2 className="text-white text-3xl">
-                      base <span>2 step left</span>
+                      base {baseLeft ? <span>{baseLeft} step left</span> : ""}
                     </h2>
                   </div>
                   <div className="hb-side-nav">
                     <ul>
-                      <li>
-                        <button href="#">Size</button>
-                        <span>1.1x</span>
-                      </li>
-                      <li>
-                        <button href="#">Wrist Type</button>
-                        <span>red</span>
-                      </li>
-                      <li>
-                        <button href="#">color</button>
-                        <span>pink</span>
-                      </li>
+                      {Object.entries(filteredBaseConfig)
+                        .filter(([key]) => baseSteps[key])
+                        .map(([key, value]) => (  
+                          <li key={key}>
+                            <button onClick={() => {handleNavBase(key)}}>{format_Text(key)} </button>
+                            <div style={{color: "red"}}>{baseRequired[key] ? "*" : ""}</div>
+                            <span>{value === null ? "No" : value}</span>
+                          </li>
+                        ))}
+                    </ul>
+                  </div>
+                  <div className="heading">
+                    <h2 className="text-white text-3xl">
+                      color {colorLeft ? <span>{colorLeft} step left</span> : ""}
+                    </h2>
+                  </div>
+                  <div className="hb-side-nav">
+                    <ul>
+                      {Object.entries(filteredColorConfig)
+                        .filter(([key]) => colorSteps[key])
+                        .map(([key, colorCode]) => {
+                          const colorName = Object.entries(colorPalette)
+                            .find(([name, code]) => code === colorCode)?.[0];
+                          const textureName =  Object.entries(texturePalette)
+                            .find(([name, code]) => code === textures[key])?.[0];
+                          return (
+                            <li key={key}>
+                              <button onClick={() => {handleNavColor(key)}}>{format_Text(key)}</button>
+                              <div style={{color: "red"}}>{colorRequired[key] ? "*" : ""}</div>
+                              {textures[key] ? (
+                                <span>{textureName}</span>
+                              ) : (
+                                <>
+                                  <span 
+                                  style={{
+                                    backgroundColor: colorCode,
+                                    width: '20px',
+                                    height: '20px',
+                                    borderRadius: '3px'
+                                  }}
+                                  />
+                                  <span>{colorName}</span> 
+                                </>
+                              )} 
+                            </li>
+                          )
+                      })}
+                    </ul>
+                  </div>
+                  <div className="heading">
+                    <h2 className="text-white text-3xl">
+                      Personalize {personalizeLeft ? <span>{personalizeLeft} step left</span> : ""}
+                    </h2>
+                  </div>
+                  <div className="hb-side-nav">
+                    <ul>
+                      {Object.entries(filteredPersonalizeConfig)
+                        .filter(([key]) => personilzeSteps[key])
+                        .map(([key, value]) => (  
+                          <li key={key}>
+                            <button onClick={() => {handleNavPersonalization(key)}}>{key}</button>
+                            <div style={{color: "red"}}>{personalizedRequired[key] ? "*" : ""}</div>
+                            <span>{value === null ? "No" : value}</span>
+                          </li>
+                        ))}
                     </ul>
                   </div>
                 </div>
@@ -650,31 +1152,31 @@ export default function Main() {
                       aria-labelledby="pills-home-tab"
                     >
                       <ul className="d-flex justify-content-around">
-                        <li>2 remaining</li>
-                        <li>19 remaining</li>
-                        <li>1 remaining</li>
+                        {baseLeft > 0 ? <li>{baseLeft} remaining</li> : ""}
+                        {colorLeft > 0 ? <li>{colorLeft} remaining</li> : ""}
+                        {personalizeLeft > 0 ? <li>{personalizeLeft} remaining</li> : ""}
                       </ul>
                       <div className="variants-categories-block position-relative">
-                        <div className="variants-categories d-flex justify-content-center">
-                          <div className="variants-category active">
-                            <span> {currentBase} </span>
-                          </div>
-                          <div className="variants-category">
-                            <span>Logo Style</span> 
-                          </div>
-                          <div className="variants-category">
-                            <span>Logo Outline</span> 
-                          </div>
-                          <div className="variants-category">
-                            <span>Finger Option</span> 
-                          </div>
+                      <div className="variants-categories d-flex justify-content-center">
+                        <div className="variants-category active">
+                          <span>{format_Text(currentBase)}</span> 
                         </div>
+                        
+                        {Object.keys(baseEnabled)
+                        .slice(Object.keys(baseEnabled).indexOf(currentBase) + 1, 
+                                Object.keys(baseEnabled).indexOf(currentBase) + 4)
+                        .map(step => (
+                            <div key={step} className="variants-category" onClick={()=>{setCurrentBase(step)}}>
+                              <span>{format_Text(step)}</span>
+                            </div>  
+                          ))}
+                      </div>
                         <button className="vc-arrows vc-left" onClick={() => {handlePreviousClick(baseOptions, currentBase, setCurrentBase, baseSteps)}} disabled={Object.keys(baseOptions).indexOf(currentBase) === 0} />
                         <button className="vc-arrows vc-right" onClick={() => {handleNextClick(baseOptions, currentBase, setCurrentBase, baseSteps)}} disabled={Object.keys(baseOptions).indexOf(currentBase) ===  Object.keys(baseOptions).length - 1} />
                       </div>
                       <div className="data-card">
                         <div className="data-head d-flex justify-content-between">
-                          <h2 className="title">{currentBase}:</h2>
+                          <h2 className="title">{format_Text(currentBase)}:</h2>
                           <a
                             href="/"
                             className="product-guid d-flex align-items-center"
@@ -723,31 +1225,30 @@ export default function Main() {
                       aria-labelledby="pills-home-tab"
                     >
                       <ul className="d-flex justify-content-around">
-                        <li>2 remaining</li>
-                        <li>19 remaining</li>
-                        <li>1 remaining</li>
+                        {baseLeft > 0 ? <li>{baseLeft} remaining</li> : ""}
+                        {colorLeft > 0 ? <li>{colorLeft} remaining</li> : ""}
+                        {personalizeLeft > 0 ? <li>{personalizeLeft} remaining</li> : ""}
                       </ul>
                       <div className="variants-categories-block position-relative">
                         <div className="variants-categories d-flex justify-content-center">
                           <div className="variants-category active">
-                            <span> {currentMesh} </span>
+                            <span>{format_Text(currentMesh)}</span> 
                           </div>
-                          <div className="variants-category">
-                            <span>Home Plate</span> 
-                          </div>
-                          <div className="variants-category">
-                            <span>Laces</span> 
-                          </div>
-                          <div className="variants-category">
-                            <span>Leather 1</span> 
-                          </div>
+                          {Object.keys(colorEnabled)
+                          .slice(Object.keys(colorEnabled).indexOf(currentMesh) + 1, 
+                                  Object.keys(colorEnabled).indexOf(currentMesh) + 4)
+                          .map(step => (
+                              <div key={step} className="variants-category" onClick={()=>{setCurrentMesh(step)}}>
+                                <span>{format_Text(step)}</span>
+                              </div>  
+                            ))}
                         </div>
                         <button className="vc-arrows vc-left" onClick={() => {handlePreviousClick(colorData, currentMesh, setCurrentMesh, colorSteps)}} disabled={Object.keys(colorData).indexOf(currentMesh) === 0} />
                         <button className="vc-arrows vc-right" onClick={() => {handleNextClick(colorData, currentMesh, setCurrentMesh, colorSteps)}} disabled={Object.keys(colorData).indexOf(currentMesh) ===  Object.keys(colorData).length - 1} />
                       </div>
                       <div className="data-card">
                         <div className="data-head d-flex justify-content-between">
-                          <h2 className="title">{currentMesh}:</h2>
+                          <h2 className="title">{format_Text(currentMesh)}:</h2>
                           <a
                             href="/"
                             className="product-guid d-flex align-items-center"
@@ -834,24 +1335,23 @@ export default function Main() {
                       aria-labelledby="pills-home-tab"
                     >
                       <ul className="d-flex justify-content-around">
-                        <li>2 remaining</li>
-                        <li>19 remaining</li>
-                        <li>1 remaining</li>
+                        {baseLeft > 0 ? <li>{baseLeft} remaining</li> : ""}
+                        {colorLeft > 0 ? <li>{colorLeft} remaining</li> : ""}
+                        {personalizeLeft > 0 ? <li>{personalizeLeft} remaining</li> : ""}
                       </ul>
                       <div className="variants-categories-block position-relative">
                         <div className="variants-categories d-flex justify-content-center">
                           <div className="variants-category active">
-                            <span> {currentPersonlize} </span>
+                            <span>{currentPersonlize}</span> 
                           </div>
-                          <div className="variants-category">
-                            <span>Palm Stamp</span> 
-                          </div>
-                          <div className="variants-category">
-                            <span>Thumb Text</span> 
-                          </div>
-                          <div className="variants-category">
-                            <span>Pinky Text</span> 
-                          </div>
+                          {Object.keys(personalizeEnabled)
+                          .slice(Object.keys(personalizeEnabled).indexOf(currentPersonlize) + 1, 
+                                  Object.keys(personalizeEnabled).indexOf(currentPersonlize) + 4)
+                          .map(step => (
+                              <div key={step} className="variants-category" onClick={()=>{setCurrentPersonlize(step)}}>
+                                <span>{step}</span>
+                              </div>  
+                            ))}
                         </div>
                         <button className="vc-arrows vc-left" onClick={() => {handlePreviousClick(personlizeConfig, currentPersonlize, setCurrentPersonlize, personilzeSteps)}} disabled={Object.keys(personlizeConfig).indexOf(currentPersonlize) === 0} />
                         <button className="vc-arrows vc-right" onClick={() => {handleNextClick(personlizeConfig, currentPersonlize, setCurrentPersonlize, personilzeSteps)}} disabled={Object.keys(personlizeConfig).indexOf(currentPersonlize) ===  Object.keys(personlizeConfig).length - 1} />
@@ -995,18 +1495,21 @@ export default function Main() {
                   /> */}
               </div>
               <div className="add-cart-box">
-                <button href="#" className="btn btn-secondry">
-                  add to cart $199
+                <button href="#" className="btn btn-secondry" onClick={HandleCheckout} disabled={(baseLeft + colorLeft + personalizeLeft) > 0}>
+                  add to cart ${usePricing && price}
                 </button>
-                <p className="m-0">
+                {(baseLeft + colorLeft + personalizeLeft) > 0 && (
+                  <p className="m-0">
                   To add to cart, please answer the required steps in the Base,
                   Colors, and Personalize sections.
-                </p>
+                  </p>
+                )}
               </div>
             </div>
-
+            
             <ProductSlideshow baseConfig={baseConfig} colors={colors} textures={textures} personlizeConfig={personlizeConfig} personlizationConfig={personlizationConfig} xPosition={xPosition} yPosition={yPosition} zPosition={zPosition} xRotation={xRotation} yRotation={yRotation} zRotation={zRotation} />
           </div>
+          {/* <button onClick={captureScreenshot}>Capture Screenshot</button> */}
         </div>
       </div>
     </main>

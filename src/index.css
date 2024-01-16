@@ -47,6 +47,11 @@ input:focus,textarea:focus{outline: none !important; box-shadow: none !important
     textarea {min-height: 230px !important;height: 230px !important;max-height: 230px !important;}
 }
 
+.canvas-m-auto {
+  width: 733; 
+  height: 712
+}
+
 ul,
 ol {list-style-type: none;margin: 0;padding: 0; }
 button {outline: none; }
@@ -435,6 +440,10 @@ border: 2px solid #333;
 .hb-side-bar.activate{transform: translateX(0);} 
 .hb-side-bar .hb-inner-sidebar .row{background-color: #fff;}
 .hb-side-bar .asign-src-icon button{border: 0; outline: none; background: transparent;}
+.hb-inner-sidebar {
+  height: calc(100vh);
+  overflow-y: auto;
+}
 
 .hb-side-bar{max-width: 230px;}
 .hb-side-bar .hb-inner-sidebar input{ border: 0 !important; height: 40px !important; outline: 0; width: 100%; color: #575757; background: transparent;}

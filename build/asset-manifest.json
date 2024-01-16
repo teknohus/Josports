@@ -1,7 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.4e98c744.css",
-    "main.js": "/static/js/main.ecfab607.js",
+    "main.css": "/static/css/main.b712e0d5.css",
+    "main.js": "/static/js/main.ddab325b.js",
+    "static/media/Texture1.png": "/static/media/Texture1.ef3b565c525644f9963b.png",
     "static/media/Hot Pink Snakeskin Art Spots.png": "/static/media/Hot Pink Snakeskin Art Spots.5d024125c1f223c7321f.png",
     "static/media/Pink Snakeskin Art Spots.png": "/static/media/Pink Snakeskin Art Spots.729afb2b28386d110305.png",
     "static/media/Teal Snakeskin Art Spots.png": "/static/media/Teal Snakeskin Art Spots.027269bef9d21274a9d2.png",
@@ -30,6 +31,7 @@
     "static/media/snake skin grey.png": "/static/media/snake skin grey.4ad7c53bd15eeb6266b4.png",
     "static/media/snake skin teal.png": "/static/media/snake skin teal.7fa7916a9f0786a2e1e7.png",
     "static/media/cow skin furred.png": "/static/media/cow skin furred.08c40b11d7085da40818.png",
+    "static/media/Texture2.png": "/static/media/Texture2.3d39620e32123e9cdc48.png",
     "static/media/Red Vintage.png": "/static/media/Red Vintage.4a8dcff2f7868a47b4c6.png",
     "static/media/green camo.jpg": "/static/media/green camo.9199c7560e6514739a59.jpg",
     "static/media/snake skin black.png": "/static/media/snake skin black.6b64ab504f377019dceb.png",
@@ -106,11 +108,11 @@
     "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
-    "main.4e98c744.css.map": "/static/css/main.4e98c744.css.map",
-    "main.ecfab607.js.map": "/static/js/main.ecfab607.js.map"
+    "main.b712e0d5.css.map": "/static/css/main.b712e0d5.css.map",
+    "main.ddab325b.js.map": "/static/js/main.ddab325b.js.map"
   },
   "entrypoints": [
-    "static/css/main.4e98c744.css",
-    "static/js/main.ecfab607.js"
+    "static/css/main.b712e0d5.css",
+    "static/js/main.ddab325b.js"
   ]
 }
