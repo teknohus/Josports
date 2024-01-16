@@ -1161,7 +1161,6 @@ export default function Main() {
                         <div className="variants-category active">
                           <span>{format_Text(currentBase)}</span> 
                         </div>
-                        
                         {Object.keys(baseEnabled)
                         .slice(Object.keys(baseEnabled).indexOf(currentBase) + 1, 
                                 Object.keys(baseEnabled).indexOf(currentBase) + 4)
@@ -1192,6 +1191,27 @@ export default function Main() {
                         <div className="options-area ">
                           <form action="#" method className="d-flex flex-wrap">
                             <div className="row">
+                            {data[currentBase].icons && (
+                                <>
+                                  {Object.entries(data[currentBase].icons).map(([label, img]) => (
+                                    <div className="col-md-4">
+                                      <img
+                                        className={`texture-option1 ${
+                                          baseConfig[currentBase] === label ? "selected" : ""
+                                        }`}
+                                        key={img}
+                                        src={img}
+                                        alt={label}
+                                        onClick={()=>{handleBaseChange(currentBase, label)}}
+                                      />
+                                      <div className="texture-label">
+                                        {label}
+                                      </div>
+                                    </div>
+                                  ))}
+                                  <br/>
+                                </>
+                              )}
                               {(data[currentBase].options).map(option => (
                                 <div className="col-md-4">
                                   <label className="hb-label-cust">
@@ -1447,7 +1467,7 @@ export default function Main() {
                                   {Object.entries(data[currentPersonlize].icons).map(([label, img]) => (
                                     <div className="col-md-4">
                                       <img
-                                        className={`texture-option ${
+                                        className={`texture-option2 ${
                                           personlizeConfig[currentPersonlize] === label ? "selected" : ""
                                         }`}
                                         key={img}

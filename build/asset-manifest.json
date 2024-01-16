@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.b712e0d5.css",
-    "main.js": "/static/js/main.ddab325b.js",
+    "main.css": "/static/css/main.b4e8ea34.css",
+    "main.js": "/static/js/main.be632de9.js",
     "static/media/Texture1.png": "/static/media/Texture1.ef3b565c525644f9963b.png",
     "static/media/Hot Pink Snakeskin Art Spots.png": "/static/media/Hot Pink Snakeskin Art Spots.5d024125c1f223c7321f.png",
     "static/media/Pink Snakeskin Art Spots.png": "/static/media/Pink Snakeskin Art Spots.729afb2b28386d110305.png",
@@ -43,11 +43,22 @@
     "static/media/Eagle.png": "/static/media/Eagle.647aa75da6ffc9699135.png",
     "static/media/Black Vintage.png": "/static/media/Black Vintage.57ddc44079b07dfc17f8.png",
     "static/media/invert-elephant-skin.jpg": "/static/media/invert-elephant-skin.4dc51b1117302fd39a22.jpg",
+    "static/media/LogoVenezuela.jpg": "/static/media/LogoVenezuela.477450ed76f8e1f00908.jpg",
+    "static/media/LogoDR.jpg": "/static/media/LogoDR.a159bd340f15eae29a5a.jpg",
+    "static/media/LogoAustralia.jpg": "/static/media/LogoAustralia.b47ba4962d1b1fd8765c.jpg",
+    "static/media/LogoKorea.jpg": "/static/media/LogoKorea.4f91e803e4a07e349dc4.jpg",
+    "static/media/LogoCanada.jpg": "/static/media/LogoCanada.8769fa090529fbfdb79d.jpg",
+    "static/media/LogoNetherlands.jpg": "/static/media/LogoNetherlands.cd17c9a673e0013241ae.jpg",
+    "static/media/LogoJapan.jpg": "/static/media/LogoJapan.a5aa99357d3d0a333270.jpg",
+    "static/media/LogoItaly.jpg": "/static/media/LogoItaly.37aecc18a1a5a440d532.jpg",
     "static/media/champion.png": "/static/media/champion.c89d66dd136a0067dd63.png",
     "static/media/green_clover.png": "/static/media/green_clover.b8187bb51cedd46fad1a.png",
     "static/media/Mexico.png": "/static/media/Mexico.0a322672b63a0e5072bf.png",
     "static/media/HergonGrotesk-Medium.ttf": "/static/media/HergonGrotesk-Medium.994cb8dc0b0d05bc83ee.ttf",
+    "static/media/LogoUSA.png": "/static/media/LogoUSA.1f71aed7caee4c3be268.png",
     "static/media/Dragon.png": "/static/media/Dragon.ff3f96160af63a2d74b0.png",
+    "static/media/LogoMexico.png": "/static/media/LogoMexico.d478a29f5573b81a47e1.png",
+    "static/media/LogoPR.png": "/static/media/LogoPR.15d615fb3edfb39b8823.png",
     "static/media/Baseball Bats.png": "/static/media/Baseball Bats.745597227a7ec01ad1b6.png",
     "static/media/red camo.webp": "/static/media/red camo.5fa782b4f0df4894e9a3.webp",
     "static/media/cannon.png": "/static/media/cannon.b9fcd5de0cad36573d87.png",
@@ -108,11 +119,11 @@
     "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
-    "main.b712e0d5.css.map": "/static/css/main.b712e0d5.css.map",
-    "main.ddab325b.js.map": "/static/js/main.ddab325b.js.map"
+    "main.b4e8ea34.css.map": "/static/css/main.b4e8ea34.css.map",
+    "main.be632de9.js.map": "/static/js/main.be632de9.js.map"
   },
   "entrypoints": [
-    "static/css/main.b712e0d5.css",
-    "static/js/main.ddab325b.js"
+    "static/css/main.b4e8ea34.css",
+    "static/js/main.be632de9.js"
   ]
 }

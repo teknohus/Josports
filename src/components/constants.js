@@ -57,6 +57,17 @@ import Mexico from '../assets/logo_flag/Mexico.png'
 import Puerto_Rico from '../assets/logo_flag/Puerto_Rico.png'
 import Venezuela from '../assets/logo_flag/Venezuela.png'
 import Netherlands from '../assets/logo_flag/Netherlands.png'
+import logoUSA from '../assets/logo_flag/LogoUSA.png'
+import logoAustralia from '../assets/logo_flag/LogoAustralia.jpg'
+import logoCanada from '../assets/logo_flag/LogoCanada.jpg'
+import logoDR from '../assets/logo_flag/LogoDR.jpg'
+import logoItlay from '../assets/logo_flag/LogoItaly.jpg'
+import logoJapan from '../assets/logo_flag/LogoJapan.jpg'
+import logoKorea from '../assets/logo_flag/LogoKorea.jpg'
+import logoMexico from '../assets/logo_flag/LogoMexico.png'
+import logoPR from '../assets/logo_flag/LogoPR.png'
+import logoVenezuela from '../assets/logo_flag/LogoVenezuela.jpg'
+import logoNetherland from '../assets/logo_flag/LogoNetherlands.jpg'
 import clover from '../assets/Graphics/clover.png'
 import crown from '../assets/Graphics/Crown.png'
 import baseballbats from '../assets/Graphics/Baseball Bats.png'
@@ -881,8 +892,8 @@ export const meshOptions = {
     },
     embroidered_flag: {
       textbox: false,
-      options: ["USA", "Korea", "Venezuela", "Dominican Republic", "Japan", "Australia", "Mexico", "Canada", "Italy", "Puerto Rico", "Netherlands"],
-      icons: null,
+      options: [],
+      icons: {"USA": logoUSA, "Korea": logoKorea, "Venezuela": logoVenezuela, "Dominican Republic": logoDR, "Japan": logoJapan, "Australia": logoAustralia, "Mexico": logoMexico, "Canada": logoCanada, "Italy": logoItlay, "Puerto Rico": logoPR, "Netherlands": logoNetherland,},
       colors: null,
     },
     logo_outline: {

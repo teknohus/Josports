@@ -352,8 +352,45 @@ border: 2px solid #333;
   border-radius: 10px;
   grid-column: 1 / span 4;
 }
+.texture-option1 {
+  width: 90px; 
+  height: 60px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  flex: 0 0 calc(25% - 10px);
+  position: relative;
+  border-radius: 10px;
+  grid-column: 1 / span 4;
+}
+.texture-option1 {
+  width: 90px; 
+  height: 60px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  flex: 0 0 calc(25% - 10px);
+  position: relative;
+  border-radius: 10px;
+  grid-column: 1 / span 4;
+}
 
 .texture-option.selected {
+  border: 2px solid #333;
+}
+.texture-option2 {
+  width: 100px; 
+  height: 100px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  flex: 0 0 calc(25% - 10px);
+  position: relative;
+  border-radius: 10px;
+  grid-column: 1 / span 4;
+}
+
+.texture-option2.selected {
+  border: 2px solid #333;
+}
+.texture-option1.selected {
   border: 2px solid #333;
 }
 
