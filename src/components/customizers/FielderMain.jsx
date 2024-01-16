@@ -644,6 +644,17 @@ export default function Main() {
         inlay: false
       }));
     }
+    if(option === 'Kip Palm Liner' && value === 'Kip Palm Liner (+$15)') {
+      setColorSteps(prevSteps => ({
+        ...prevSteps,
+        "Kip Palm Liner": true
+      }));
+    } else if(option === 'Kip Palm Liner' && value !== 'Kip Palm Liner (+$15)') {
+      setColorSteps(prevSteps => ({
+        ...prevSteps,
+        "Kip Palm Liner": false
+      }));
+    }
 
     if(option === "dual_welting" && value === "Dual Welting") {
       setColorSteps(prevSteps => ({

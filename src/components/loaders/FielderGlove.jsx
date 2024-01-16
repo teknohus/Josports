@@ -162,10 +162,12 @@ export function New({rot, base, colors, personalize, personalizeConfig, xPositio
   return (
     <group dispose={null} position={[0, -2.1, 0]} scale={[26, 26, 26]} ref={ref}>
 
-    <mesh position={[-0.015, 0.042, 0.023]} rotation={[0.09375*Math.PI, -0.125*Math.PI, 0.03125*Math.PI]} scale={0.008}>
-      <planeGeometry args={[9.5, 3]} />
-      <meshBasicMaterial color="Black" side={THREE.DoubleSide} />
-    </mesh>
+    {base["Kip Palm Liner"] === "Kip Palm Liner (+$15)" && (
+      <mesh position={[-0.009, 0.044, 0.029]} rotation={[0.09375*Math.PI, -0.125*Math.PI, 0.03125*Math.PI]} scale={0.008}>
+        <planeGeometry args={[7.8, 3]} />
+        <meshBasicMaterial color={colors["Kip Palm Liner"]} side={THREE.DoubleSide} />
+      </mesh>
+    )}
 
       {/*Extras*/}
       {/* <mesh geometry={nodes.palm_mesh.geometry} material-color={colors.palm} material={materials['Details 2']} position={[0.017, 0.004, -0.009]} rotation={[1.688, 0.191, -0.136]} scale={0.01} />
