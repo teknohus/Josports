@@ -3,7 +3,7 @@ import { useGLTF,  useTexture, Text } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 import { flags } from "../constants";
-import { thumb_graphics, thumb_premium_graphics, stamp_flags, stamp_palm, fonts, back_flags } from "../constants"
+import { thumb_graphics, thumb_premium_graphics, stamp_flags, stamp_palm, fonts, back_flags, LegendLogo, LegendHorse } from "../constants"
 import Outlinefont from "../../assets/fonts/Milestone Outline.otf"
 import goldshiny from '../../assets/textures/gold shiny/MetalGoldPaint002_COL_1K_METALNESS.png'
 import silvershiny from '../../assets/textures/silver shiny/base_base_BaseColor.png'
@@ -104,6 +104,28 @@ const PalmGraphic = ({ nodes, materials, position, rotation, scale, personalize 
     <mesh geometry={nodes.shaka_premium.geometry} material={Copy} position={position} rotation={rotation} scale={scale} />
   );
 };
+
+const PalmText = ({ nodes, materials, position, rotation, scale, personalize }) => {
+  const graphicTexture = useTexture(LegendLogo);
+  graphicTexture.encoding = THREE.sRGBEncoding;
+  const Copy =  materials.ilovetacos.clone();
+  Copy.map = graphicTexture
+
+  return (
+    <mesh geometry={nodes.shaka_premium.geometry} material={Copy} position={position} rotation={rotation} scale={scale} />
+  );
+};
+const PalmStamp = ({ nodes, materials, position, rotation, scale, personalize }) => {
+  const graphicTexture = useTexture(LegendHorse);
+  graphicTexture.encoding = THREE.sRGBEncoding;
+  const Copy =  materials.ilovetacos.clone();
+  Copy.map = graphicTexture
+
+  return (
+    <mesh geometry={nodes.shaka_premium.geometry} material={Copy} position={position} rotation={rotation} scale={scale} />
+  );
+};
+
 const BackFlag = ({ nodes, materials, position, rotation, scale, personalize }) => {
   const graphicTexture = useTexture(back_flags[personalize['Flag']]);
   graphicTexture.encoding = THREE.sRGBEncoding;
@@ -248,23 +270,16 @@ export function New({rot, base, colors, personalize, personalizeConfig, xPositio
       )}
       <mesh geometry={nodes.Lining.geometry} material-color={'#000000'} material={materials.Inside} position={[-0.007, 0.013, 0.009]} rotation={[1.617, -0.085, -2.45]} scale={0.008} />
       {personalize["Palm Stamp"] === "Legend Logo" && (
-        <>
-          <Text
-            font={Outlinefont}
-            position={[-0.012, 0.071, 0.021]}
-            rotation={[0.0625*Math.PI, -1.125*Math.PI, -0.03125*Math.PI]}
-            color={"#707070"}
-            scale={0.01}
-          >
-            {"Legend"}
-          </Text>
-        </>
+          <PalmText nodes={nodes} materials={materials} position={[-0.016, 0.075, 0.019]} rotation={[-0.5*Math.PI, -0.04685*Math.PI, -1.125*Math.PI]} personalize={personalize} scale={[0.040, 0.020, 0.020]} /> 
+      )}
+      {personalize["Palm Stamp"] === "Legend Horse Stamp" && (
+          <PalmStamp nodes={nodes} materials={materials} position={[-0.016, 0.075, 0.019]} rotation={[-0.55*Math.PI, 0.01565*Math.PI, -1.125*Math.PI]} personalize={personalize} scale={[0.040, 0.040, 0.020]} /> 
       )}
       {personalize["Palm Stamp"] === "Custom Number" && (
         <>
           <Text
             font={Outlinefont}
-            position={[-0.012, 0.071, 0.021]}
+            position={[-0.016, 0.071, 0.021]}
             rotation={[0.0625*Math.PI, -1.125*Math.PI, -0.03125*Math.PI]}
             color={"#707070"}
             scale={0.024}
@@ -275,7 +290,8 @@ export function New({rot, base, colors, personalize, personalizeConfig, xPositio
       )}
       {personalize["Palm Stamp"] === "Graphic" && (
         <>
-          <PalmGraphic nodes={nodes} materials={materials} position={[-0.012, 0.075, 0.019]} rotation={[-0.4375*Math.PI, -0.0625*Math.PI, -1.125*Math.PI]} personalize={personalize} scale={0.020} />        </>
+          <PalmGraphic nodes={nodes} materials={materials} position={[-0.0145, 0.075, 0.019]} rotation={[-0.4375*Math.PI, -0.0625*Math.PI, -1.125*Math.PI]} personalize={personalize} scale={0.020} />
+        </>
       )}
 
       {/*CrownPatch*/}

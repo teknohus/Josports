@@ -221,8 +221,11 @@ import flag_wyoming from "../assets/flags/wyoming.png"
 import Script from "../assets/fonts/Brush Script Bold.ttf"
 import Outlinefont from "../assets/fonts/Milestone Outline.otf"
 import Bold from "../assets/fonts/HergonGrotesk-Medium.ttf"
+import legendLogo from "../assets/palm_stamp/legendLogo.png"
+import legendHorse from "../assets/palm_stamp/LegendHorse.png"
 
-export const img = peace
+export const LegendLogo = legendLogo
+export const LegendHorse = legendHorse
 
 export const flags = {
   "USA": USA,
@@ -1018,7 +1021,7 @@ export const meshOptions = {
     },
     "Palm Stamp": {
       textbox: false,
-      options: ["None", "Legend Logo", "Custom Number", "Graphic"],
+      options: ["None", "Legend Logo", "Custom Number", "Graphic", "Legend Horse Stamp"],
       icons: null,
       colors: null,
     },

@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.b4e8ea34.css",
-    "main.js": "/static/js/main.9b34090a.js",
+    "main.js": "/static/js/main.4e66cd43.js",
     "static/media/Texture1.png": "/static/media/Texture1.ef3b565c525644f9963b.png",
     "static/media/Hot Pink Snakeskin Art Spots.png": "/static/media/Hot Pink Snakeskin Art Spots.5d024125c1f223c7321f.png",
     "static/media/Pink Snakeskin Art Spots.png": "/static/media/Pink Snakeskin Art Spots.729afb2b28386d110305.png",
@@ -65,6 +65,7 @@
     "static/media/reptile.jpg": "/static/media/reptile.d8471de65804e0476577.jpg",
     "static/media/bg-layer.jpg": "/static/media/bg-layer.2d1dd15bf34b188410ea.jpg",
     "static/media/Fries.png": "/static/media/Fries.57377551c921a29844d7.png",
+    "static/media/legendLogo.png": "/static/media/legendLogo.1039b3a55a5501fd1091.png",
     "static/media/Dounut.png": "/static/media/Dounut.f2fcfe43f06346a89e9d.png",
     "static/media/Brush Script Bold.ttf": "/static/media/Brush Script Bold.2791f737aa6f79dfc6f2.ttf",
     "static/media/cross.png": "/static/media/cross.4ea8f00e40ea2454f9a9.png",
@@ -76,6 +77,7 @@
     "static/media/Australia.png": "/static/media/Australia.600fcf7dc3f7ce58c18a.png",
     "static/media/Korea.png": "/static/media/Korea.469e27ad3661c0beb3f7.png",
     "static/media/usa.png": "/static/media/usa.91934dd63ddf64532e17.png",
+    "static/media/LegendHorse.png": "/static/media/LegendHorse.6048d8b6dbd060b995bc.png",
     "static/media/maryland.png": "/static/media/maryland.f88dc37e0e3455108312.png",
     "static/media/australia.png": "/static/media/australia.be2f1ede799af7f0976d.png",
     "static/media/hat.png": "/static/media/hat.69671be5ec92fd9f4dfe.png",
@@ -120,10 +122,10 @@
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
     "main.b4e8ea34.css.map": "/static/css/main.b4e8ea34.css.map",
-    "main.9b34090a.js.map": "/static/js/main.9b34090a.js.map"
+    "main.4e66cd43.js.map": "/static/js/main.4e66cd43.js.map"
   },
   "entrypoints": [
     "static/css/main.b4e8ea34.css",
-    "static/js/main.9b34090a.js"
+    "static/js/main.4e66cd43.js"
   ]
 }
