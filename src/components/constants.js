@@ -474,7 +474,7 @@ export const meshOptions = {
     textures: {"Shiny Silver": silvershiny, "Shiny Gold": goldshiny , "Shiny Red": redshiny , "Shiny Blue": blueshiny, "Royal Blue Metallic": royalbluemetallic,  },
     exclusive_textures: null,
   },
-  "Home Plate": {
+  "Circle Logo": {
     colors: {"Black": "#1a1a1a", "Gray": "#84837E", "White": "#FFFFFF", "Blonde": "#FCD48F", "Yellow": "#EFD115", "Tan": "#E57E00", "Orange": "#FF6D1F", "Orange Tan": "#D3480F", "Oiled Chestnut": "#9B4E2B", "Brown": "#694E3B", "Red": "#D21E1E", "Maroon": "#943535", "Pink": "#F07693", "Purple": "#58357D", "Navy Blue": "#262740", "Royal Blue": "#2143BF", "Sky Blue": "#0BB4C7", "Forest Green": "#334F30", "Mint": "#65DDA3", "Light Gray": "#9D9D99", "Lime Green": "#29E600",},
     textures: {"Texture1": texture1, "Texture2": texture2,"Shiny Silver": silvershiny, "Shiny Gold": goldshiny , "Shiny Red": redshiny , "Shiny Blue": blueshiny, "Royal Blue Metallic": royalbluemetallic,  "Blue Pink Tie": bluepinktie , "Green Camo": greencamo , "Gray Camo": graycamo , "Red Camo": redcamo , "Green Gradient": greengradient, "Shiny Chameleon": shinychameleon, "Reptile Skin": reptileskin , "Aligator Skin": alligatorskin, "Elephant Skin": elephantskin, "Lime Green Paint Spots": limegreenpaintspots, "Teal Art Spots": tealartspots, "Sky Blue Art Spots": skyblueartspots, "Pink Art Spots": pinkartspots, "Black Snake": snakeblack , "Gray Snake": snakegray , "White Snake": snakewhite, "Red Snake": snakered, "Blue Snake": snakelblue , "Blonde Snake": snakeblonde , "Brown Snake": snakebrown , "Pink Snake": snakepink , "Purple Snake": snakepurple , "Tan Snake": snaketan , "Teal Snake": snaketeal , "Pink Snakeskin Art Spots": pinksnakeskinartspots, "Hot Pink Snakeskin Art Spots": hotpinksnakeskinartspots, "Teal Snakeskin Art Spots": tealsnakeskinartspots, "White Vintage": whitevintage, "Black Vintage": blackvintage, "Gray Vintage": grayvintage, "Mint Vintage": mintvintage, "Red Vintage": redvintage, "Cross Pattern": crosspattern , "Stripe Pattern": stripepattern, "Midnight City Edition": midnightcityedition,  },
     exclusive_textures: {"Furred Cow Skin": furredskincow, "Inverted Elephant Skin": invertedelephaantskin, "Red Elephant Skin": redelephantskin, "White Ostrich": whiteostrich, },
@@ -634,7 +634,7 @@ export const meshOptions = {
 
   export const colorData = {
     binding: "#fefefe",
-    "Home Plate": "#fefefe",
+    "Circle Logo": "#fefefe",
     finger_hood: "#fefefe",
     finger_pad: "#fefefe",
     inlay: "#fefefe",
@@ -671,7 +671,7 @@ export const meshOptions = {
 
   export const textureData = {
     binding: null,
-    "Home Plate": null,
+    "Circle Logo": null,
     finger_hood: null,
     finger_pad: null,
     inlay: null,
@@ -706,7 +706,7 @@ export const meshOptions = {
 
   export const colorStepsConfig= {
     binding: true,
-    "Home Plate": true,
+    "Circle Logo": true,
     finger_hood: false,
     finger_pad: false,
     inlay: false,
@@ -743,7 +743,7 @@ export const meshOptions = {
 
   export const colorReq= {
     binding: true,
-    "Home Plate": true,
+    "Circle Logo": true,
     finger_hood: true,
     finger_pad: true,
     inlay: true,
@@ -863,7 +863,7 @@ export const meshOptions = {
   }
 
   export const personlizationOptions = {
-    "Thumb Logo/Graphic" : "Home Plate Logo",
+    "Thumb Logo/Graphic" : "Circle Logo",
     "Thumb Graphic": "Cross",
     "Premium Graphic": "Hot Dog", 
     "Jumbo Number": "",
@@ -976,7 +976,7 @@ export const meshOptions = {
     },
     "Thumb Logo/Graphic": {
       textbox: false,
-      options: ["Logo", "Home Plate Logo", "Graphic (+$7)", "Premium Graphic (+$15)", "Jumbo Number (+$7)", "Stamped Flag (+$7)", "Thumb Flag (+$7)", "Custom Plate Number (+$7)"],
+      options: ["Logo", "Circle Logo", "Graphic (+$7)", "Premium Graphic (+$15)", "Jumbo Number (+$7)", "Stamped Flag (+$7)", "Thumb Flag (+$7)", "Custom Plate Number (+$7)"],
       icons: null,
       colors: null,
     },

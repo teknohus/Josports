@@ -402,18 +402,18 @@ export function New({rot, base, colors, personalize, personalizeConfig, xPositio
       {/*Side Logo*/}
       {base.inlay !== "Inlay (+$15)" && (
         <>
-          {personalize["Thumb Logo/Graphic"] === "Home Plate Logo" && (
+          {personalize["Thumb Logo/Graphic"] === "Circle Logo" && (
             <>
               {textures.leather1 ? (
-                // <MeshWithTexture geometry={nodes.thuimb.geometry} material-color={colors.leather1} material={materials.Thumb_Outer} position={[-0.007, 0.013, 0.009]} rotation={[1.617, -0.085, -2.45]} scale={0.008} texture={textures["Home Plate"]}/>
+                // <MeshWithTexture geometry={nodes.thuimb.geometry} material-color={colors.leather1} material={materials.Thumb_Outer} position={[-0.007, 0.013, 0.009]} rotation={[1.617, -0.085, -2.45]} scale={0.008} texture={textures["Circle Logo"]}/>
                 <MeshWithTexture geometry={nodes.thuimb.geometry} material-color={colors.leather1} material={materials.Thumb_Outer} position={[-0.007, 0.013, 0.009]} rotation={[1.617, -0.085, -2.45]} scale={0.008} texture={textures.leather1} />
                 ):(
                 <mesh geometry={nodes.thuimb.geometry} material-color={colors.leather1} material={materials.Thumb_Outer} position={[-0.007, 0.013, 0.009]} rotation={[1.617, -0.085, -2.45]} scale={0.008} />
               )}
-              {textures["Home Plate"] ? (
-                <MeshWithTexture geometry={nodes.logoback2.geometry} material-color={colors["Home Plate"]} material={materials.Logo_Back} position={[-0.007, 0.013, 0.009]} rotation={[1.617, -0.085, -2.45]} scale={0.008} texture={textures["Home Plate"]}/>
+              {textures["Circle Logo"] ? (
+                <MeshWithTexture geometry={nodes.logoback2.geometry} material-color={colors["Circle Logo"]} material={materials.Logo_Back} position={[-0.007, 0.013, 0.009]} rotation={[1.617, -0.085, -2.45]} scale={0.008} texture={textures["Circle Logo"]}/>
               ):(
-                <mesh geometry={nodes.logoback2.geometry} material-color={colors["Home Plate"]} material={materials.Logo_Back} position={[-0.007, 0.013, 0.009]} rotation={[1.617, -0.085, -2.45]} scale={0.008} />
+                <mesh geometry={nodes.logoback2.geometry} material-color={colors["Circle Logo"]} material={materials.Logo_Back} position={[-0.007, 0.013, 0.009]} rotation={[1.617, -0.085, -2.45]} scale={0.008} />
               )}
               <mesh geometry={nodes.side_logo1.geometry} material-color={colors.logo} material={materials.Side_Logo} position={[-0.007, 0.013, 0.009]} rotation={[1.617, -0.085, -2.45]} scale={0.008} />
             </>
@@ -493,15 +493,15 @@ export function New({rot, base, colors, personalize, personalizeConfig, xPositio
           {personalize["Thumb Logo/Graphic"] === "Custom Plate Number (+$7)" && (
             <>
               {textures.leather1 ? (
-                // <MeshWithTexture geometry={nodes.thuimb.geometry} material-color={colors.leather1} material={materials.Thumb_Outer} position={[-0.007, 0.013, 0.009]} rotation={[1.617, -0.085, -2.45]} scale={0.008} texture={textures["Home Plate"]}/>
+                // <MeshWithTexture geometry={nodes.thuimb.geometry} material-color={colors.leather1} material={materials.Thumb_Outer} position={[-0.007, 0.013, 0.009]} rotation={[1.617, -0.085, -2.45]} scale={0.008} texture={textures["Circle Logo"]}/>
                 <MeshWithTexture geometry={nodes.thuimb.geometry} material-color={colors.leather1} material={materials.Thumb_Outer} position={[-0.007, 0.013, 0.009]} rotation={[1.617, -0.085, -2.45]} scale={0.008} texture={textures.leather1} />
                 ):(
                 <mesh geometry={nodes.thuimb.geometry} material-color={colors.leather1} material={materials.Thumb_Outer} position={[-0.007, 0.013, 0.009]} rotation={[1.617, -0.085, -2.45]} scale={0.008} />
               )}
-              {textures["Home Plate"] ? (
-                <MeshWithTexture geometry={nodes.logoback2.geometry} material-color={colors["Home Plate"]} material={materials.Logo_Back} position={[-0.007, 0.013, 0.009]} rotation={[1.617, -0.085, -2.45]} scale={0.008} texture={textures["Home Plate"]}/>
+              {textures["Circle Logo"] ? (
+                <MeshWithTexture geometry={nodes.logoback2.geometry} material-color={colors["Circle Logo"]} material={materials.Logo_Back} position={[-0.007, 0.013, 0.009]} rotation={[1.617, -0.085, -2.45]} scale={0.008} texture={textures["Circle Logo"]}/>
               ):(
-                <mesh geometry={nodes.logoback2.geometry} material-color={colors["Home Plate"]} material={materials.Logo_Back} position={[-0.007, 0.013, 0.009]} rotation={[1.617, -0.085, -2.45]} scale={0.008} />
+                <mesh geometry={nodes.logoback2.geometry} material-color={colors["Circle Logo"]} material={materials.Logo_Back} position={[-0.007, 0.013, 0.009]} rotation={[1.617, -0.085, -2.45]} scale={0.008} />
               )}
               {/* <mesh geometry={nodes.side_logo1.geometry} material-color={colors.logo} material={materials.Side_Logo} position={[-0.007, 0.013, 0.009]} rotation={[1.617, -0.085, -2.45]} scale={0.008} /> */}
               <Text
@@ -583,13 +583,13 @@ export function New({rot, base, colors, personalize, personalizeConfig, xPositio
               <MeshWithTexture geometry={nodes.Ring_Inner.geometry} material-color={colors.inlay} material={materials.Ring_Inner} position={[-0.007, 0.013, 0.009]} rotation={[1.617, -0.085, -2.45]} scale={0.008} texture={textures.inlay} />
               <MeshWithTexture geometry={nodes.Ring_Outer.geometry} material-color={colors.inlay} material={materials.Ring_Outer} position={[-0.007, 0.013, 0.009]} rotation={[1.617, -0.085, -2.45]} scale={0.008} texture={textures.inlay} />
               <MeshWithTexture geometry={nodes.Pinky_Inner1.geometry} material-color={colors.inlay} material={materials.Pink_Inner} position={[-0.007, 0.013, 0.009]} rotation={[1.617, -0.085, -2.45]} scale={0.008} texture={textures.inlay} />
-              {personalize["Thumb Logo/Graphic"] === "Home Plate Logo" && (
+              {personalize["Thumb Logo/Graphic"] === "Circle Logo" && (
                 <>
                   <MeshWithTexture geometry={nodes.thuimb.geometry} material-color={colors.inlay} material={materials.Thumb_Outer} position={[-0.007, 0.013, 0.009]} rotation={[1.617, -0.085, -2.45]} scale={0.008} texture={textures.inlay} />
-                  {textures["Home Plate"] ? (
-                  <MeshWithTexture geometry={nodes.logoback2.geometry} material-color={colors["Home Plate"]} material={materials.Logo_Back} position={[-0.007, 0.013, 0.009]} rotation={[1.617, -0.085, -2.45]} scale={0.008} texture={textures["Home Plate"]}/>
+                  {textures["Circle Logo"] ? (
+                  <MeshWithTexture geometry={nodes.logoback2.geometry} material-color={colors["Circle Logo"]} material={materials.Logo_Back} position={[-0.007, 0.013, 0.009]} rotation={[1.617, -0.085, -2.45]} scale={0.008} texture={textures["Circle Logo"]}/>
                   ):(
-                    <mesh geometry={nodes.logoback2.geometry} material-color={colors["Home Plate"]} material={materials.Logo_Back} position={[-0.007, 0.013, 0.009]} rotation={[1.617, -0.085, -2.45]} scale={0.008} />
+                    <mesh geometry={nodes.logoback2.geometry} material-color={colors["Circle Logo"]} material={materials.Logo_Back} position={[-0.007, 0.013, 0.009]} rotation={[1.617, -0.085, -2.45]} scale={0.008} />
                   )}
                   <mesh geometry={nodes.side_logo1.geometry} material-color={colors.logo} material={materials.Side_Logo} position={[-0.007, 0.013, 0.009]} rotation={[1.617, -0.085, -2.45]} scale={0.008} />
                 </>
@@ -646,10 +646,10 @@ export function New({rot, base, colors, personalize, personalizeConfig, xPositio
               {personalize["Thumb Logo/Graphic"] === "Custom Plate Number (+$7)" && (
                 <>
                   <MeshWithTexture geometry={nodes.thuimb.geometry} material-color={colors.inlay} material={materials.Thumb_Outer} position={[-0.007, 0.013, 0.009]} rotation={[1.617, -0.085, -2.45]} scale={0.008} texture={textures.inlay} />
-                  {textures["Home Plate"] ? (
-                    <MeshWithTexture geometry={nodes.logoback2.geometry} material-color={colors["Home Plate"]} material={materials.Logo_Back} position={[-0.007, 0.013, 0.009]} rotation={[1.617, -0.085, -2.45]} scale={0.008} texture={textures["Home Plate"]}/>
+                  {textures["Circle Logo"] ? (
+                    <MeshWithTexture geometry={nodes.logoback2.geometry} material-color={colors["Circle Logo"]} material={materials.Logo_Back} position={[-0.007, 0.013, 0.009]} rotation={[1.617, -0.085, -2.45]} scale={0.008} texture={textures["Circle Logo"]}/>
                   ):(
-                      <mesh geometry={nodes.logoback2.geometry} material-color={colors["Home Plate"]} material={materials.Logo_Back} position={[-0.007, 0.013, 0.009]} rotation={[1.617, -0.085, -2.45]} scale={0.008} />
+                      <mesh geometry={nodes.logoback2.geometry} material-color={colors["Circle Logo"]} material={materials.Logo_Back} position={[-0.007, 0.013, 0.009]} rotation={[1.617, -0.085, -2.45]} scale={0.008} />
                   )}
                   {/* <mesh geometry={nodes.side_logo1.geometry} material-color={colors.logo} material={materials.Side_Logo} position={[-0.007, 0.013, 0.009]} rotation={[1.617, -0.085, -2.45]} scale={0.008} /> */}
                   <Text
@@ -675,13 +675,13 @@ export function New({rot, base, colors, personalize, personalizeConfig, xPositio
               <mesh geometry={nodes.Ring_Outer.geometry} material-color={colors.inlay} material={materials.Ring_Outer} position={[-0.007, 0.013, 0.009]} rotation={[1.617, -0.085, -2.45]} scale={0.008} />
               <mesh geometry={nodes.Pinky_Inner1.geometry} material-color={colors.inlay} material={materials.Pink_Inner} position={[-0.007, 0.013, 0.009]} rotation={[1.617, -0.085, -2.45]} scale={0.008} />
              
-              {personalize["Thumb Logo/Graphic"] === "Home Plate Logo" && (
+              {personalize["Thumb Logo/Graphic"] === "Circle Logo" && (
                 <>
                   <mesh geometry={nodes.thuimb.geometry} material-color={colors.inlay} material={materials.Thumb_Outer} position={[-0.007, 0.013, 0.009]} rotation={[1.617, -0.085, -2.45]} scale={0.008}  />
-                  {textures["Home Plate"] ? (
-                    <MeshWithTexture geometry={nodes.logoback2.geometry} material-color={colors["Home Plate"]} material={materials.Logo_Back} position={[-0.007, 0.013, 0.009]} rotation={[1.617, -0.085, -2.45]} scale={0.008} texture={textures["Home Plate"]}/>
+                  {textures["Circle Logo"] ? (
+                    <MeshWithTexture geometry={nodes.logoback2.geometry} material-color={colors["Circle Logo"]} material={materials.Logo_Back} position={[-0.007, 0.013, 0.009]} rotation={[1.617, -0.085, -2.45]} scale={0.008} texture={textures["Circle Logo"]}/>
                   ):(
-                      <mesh geometry={nodes.logoback2.geometry} material-color={colors["Home Plate"]} material={materials.Logo_Back} position={[-0.007, 0.013, 0.009]} rotation={[1.617, -0.085, -2.45]} scale={0.008} />
+                      <mesh geometry={nodes.logoback2.geometry} material-color={colors["Circle Logo"]} material={materials.Logo_Back} position={[-0.007, 0.013, 0.009]} rotation={[1.617, -0.085, -2.45]} scale={0.008} />
                   )}
                   <mesh geometry={nodes.side_logo1.geometry} material-color={colors.logo} material={materials.Side_Logo} position={[-0.007, 0.013, 0.009]} rotation={[1.617, -0.085, -2.45]} scale={0.008} />
                 </>
@@ -738,10 +738,10 @@ export function New({rot, base, colors, personalize, personalizeConfig, xPositio
               {personalize["Thumb Logo/Graphic"] === "Custom Plate Number (+$7)" && (
                 <>
                   <mesh geometry={nodes.thuimb.geometry} material-color={colors.inlay} material={materials.Thumb_Outer} position={[-0.007, 0.013, 0.009]} rotation={[1.617, -0.085, -2.45]} scale={0.008}  />
-                  {textures["Home Plate"] ? (
-                    <MeshWithTexture geometry={nodes.logoback2.geometry} material-color={colors["Home Plate"]} material={materials.Logo_Back} position={[-0.007, 0.013, 0.009]} rotation={[1.617, -0.085, -2.45]} scale={0.008} texture={textures["Home Plate"]}/>
+                  {textures["Circle Logo"] ? (
+                    <MeshWithTexture geometry={nodes.logoback2.geometry} material-color={colors["Circle Logo"]} material={materials.Logo_Back} position={[-0.007, 0.013, 0.009]} rotation={[1.617, -0.085, -2.45]} scale={0.008} texture={textures["Circle Logo"]}/>
                   ):(
-                      <mesh geometry={nodes.logoback2.geometry} material-color={colors["Home Plate"]} material={materials.Logo_Back} position={[-0.007, 0.013, 0.009]} rotation={[1.617, -0.085, -2.45]} scale={0.008} />
+                      <mesh geometry={nodes.logoback2.geometry} material-color={colors["Circle Logo"]} material={materials.Logo_Back} position={[-0.007, 0.013, 0.009]} rotation={[1.617, -0.085, -2.45]} scale={0.008} />
                   )}
                   {/* <mesh geometry={nodes.side_logo1.geometry} material-color={colors.logo} material={materials.Side_Logo} position={[-0.007, 0.013, 0.009]} rotation={[1.617, -0.085, -2.45]} scale={0.008} /> */}
                   <Text

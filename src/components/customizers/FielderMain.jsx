@@ -21,6 +21,7 @@ function usePricing(baseConfig, personalizeConfig) {
     const priceAffectingOptions = {
       logoStyle: baseConfig.logo_style,  
       inlay: baseConfig.inlay,  
+      kippalm: baseConfig["Kip Palm Liner"],
       thumb: personalizeConfig["Thumb Logo/Graphic"]
     }
 
@@ -30,6 +31,9 @@ function usePricing(baseConfig, personalizeConfig) {
        newPrice += 7; 
     }
     if(priceAffectingOptions.inlay === "Inlay (+$15)") {
+       newPrice += 15; 
+    }
+    if(priceAffectingOptions.kippalm === "Kip Palm Liner (+$15)") {
        newPrice += 15; 
     }
     if(priceAffectingOptions.thumb === "Graphic (+$7)") {
@@ -53,7 +57,7 @@ function usePricing(baseConfig, personalizeConfig) {
 
     setPrice(newPrice);
 
-  }, [baseConfig.logo_style, baseConfig.inlay, personalizeConfig])
+  }, [baseConfig.logo_style, baseConfig.inlay, baseConfig.kippalm, baseConfig, personalizeConfig])
 
   return { price }; // return price for usage
 
@@ -326,7 +330,7 @@ export default function Main() {
     
 
     if (option === 'Thumb Logo/Graphic' && value === null){
-      value = 'Home Plate Logo'; 
+      value = 'Circle Logo'; 
     }
 
     setPersonlizeConfig((prevOption) => ({
@@ -334,21 +338,21 @@ export default function Main() {
       [option]: value,
     }));
 
-    if(option === 'Thumb Logo/Graphic' && value === 'Home Plate Logo') {
+    if(option === 'Thumb Logo/Graphic' && value === 'Circle Logo') {
       setColorSteps(prevSteps => ({
         ...prevSteps,
-        "Home Plate": true
+        "Circle Logo": true
       }));
-    } else if(option === 'Thumb Logo/Graphic' && value !== 'Home Plate Logo') {
+    } else if(option === 'Thumb Logo/Graphic' && value !== 'Circle Logo') {
       setColorSteps(prevSteps => ({
         ...prevSteps,
-        "Home Plate": false
+        "Circle Logo": false
       }));
     }
     if(option === 'Thumb Logo/Graphic' && value === 'Custom Plate Number (+$7)') {
       setColorSteps(prevSteps => ({
         ...prevSteps,
-        "Home Plate": true
+        "Circle Logo": true
       }));
       setPersonalizedRequired(prevSteps => ({
         ...prevSteps,
@@ -357,7 +361,7 @@ export default function Main() {
     } else if(option === 'Thumb Logo/Graphic' && value !== 'Custom Plate Number (+$7)') {
       setColorSteps(prevSteps => ({
         ...prevSteps,
-        "Home Plate": false
+        "Circle Logo": false
       }));
       setPersonalizedRequired(prevSteps => ({
         ...prevSteps,
@@ -585,15 +589,15 @@ export default function Main() {
       }));
     }
 
-    if(option === 'Home Plate' && value === 'Home Plate') {
+    if(option === 'Circle Logo' && value === 'Circle Logo') {
       setColorSteps(prevSteps => ({
         ...prevSteps,
-        "Home Plate": true
+        "Circle Logo": true
       }));
-    } else if(option === 'Home Plate' && value !== 'Home Plate') {
+    } else if(option === 'Circle Logo' && value !== 'Circle Logo') {
       setColorSteps(prevSteps => ({
         ...prevSteps,
-        "Home Plate": false
+        "Circle Logo": false
       }));
     }
 
