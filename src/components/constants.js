@@ -87,13 +87,11 @@ import cannon from '../assets/Graphics/cannon.png'
 import champion from '../assets/Graphics/champion.png'
 import greenclover from '../assets/Graphics/green_clover.png'
 import hat from '../assets/Graphics/hat.png'
-import hotdog from '../assets/Graphics/hotdog.png'
 import ilovetacos from '../assets/Graphics/ilovetacos.png'
 import toofast from '../assets/Graphics/Speed Gun 99mph.png'
 import dragon from '../assets/Graphics/Dragon.png';
 import eagle from '../assets/Graphics/Eagle.png';
 import lumbre from '../assets/Graphics/Lumbre.png'; 
-import dog from '../assets/Graphics/Dog.png';
 import rhino from '../assets/Graphics/Rhino.png';
 import angrybull from '../assets/Graphics/Angry Bull.png';
 import lion from '../assets/Graphics/Lion.png';
@@ -103,6 +101,22 @@ import luckyshoe from '../assets/Graphics/Lucky Shoe.png';
 import fries from '../assets/Graphics/Fries.png';
 import donut from '../assets/Graphics/Dounut.png';
 import pirateflag from '../assets/Graphics/Pirate Flag.png';
+import angrybee from '../assets/Graphics/Angry Bee.png';
+import banana from '../assets/Graphics/Banana.png';
+import bomb from '../assets/Graphics/Bomb.png';
+import claw from '../assets/Graphics/Claw.png';
+import diamond from '../assets/Graphics/Diamond.png';
+import dog from '../assets/Graphics/Dog.png';
+import dollar from '../assets/Graphics/Dollar.png';
+import elgallo from '../assets/Graphics/El Gallo.png';
+import fox from '../assets/Graphics/Fox.png';
+import hotdog from '../assets/Graphics/Hot Dog.png';
+import indian from '../assets/Graphics/Indian.png';
+import lolipop from '../assets/Graphics/Lolipop.png';
+import pizza from '../assets/Graphics/Pizza.png';
+import rocket from '../assets/Graphics/Rocket.png';
+import strawberry from '../assets/Graphics/Strawberry.png';
+import tweentreasue from '../assets/Graphics/TweenTreasure.png';
 import usa_stamp from '../assets/stamp_flag/usa.png'
 import arizona_stamp from '../assets/stamp_flag/arizona.png'
 import australia_stamp from '../assets/stamp_flag/australia.png'
@@ -280,6 +294,20 @@ export const thumb_premium_graphics = {
   "Fries": fries,
   "Donut": donut,
   "Pirate Flag": pirateflag,
+  "Angry Bee": angrybee,
+  "Banana": banana,
+  "Bomb": bomb,
+  "Claw": claw,
+  "Diamond": diamond,   
+  "Dollar": dollar,
+  "El Gallo": elgallo,
+  "Fox": fox,
+  "Indian": indian,
+  "Lolipop": lolipop,
+  "Pizza": pizza,
+  "Rocket": rocket,
+  "Strawberry": strawberry,
+  "TweenTreasure": tweentreasue
 }
 
 export const fonts = {
@@ -992,7 +1020,7 @@ export const meshOptions = {
     "Premium Graphic": {
       textbox: false,
       options: null,
-      icons: {"Hot Dog" : hotdog, "I Love Tacos" : ilovetacos, "Cannon" : cannon, "Champion" : champion, "Goodluck Charm" : greenclover, "Golden Sombrero" : hat, "Cross" : cross1, "Too Fast" : toofast, "Dragon": dragon, "Eagle": eagle, "Lumbre": lumbre, "Dog": dog, "Rhino": rhino, "Angry Bull": angrybull, "Lion": lion, "Wolf": wolf, "Goat": goat, "Lucky shoe": luckyshoe, "Fries": fries, "Donut": donut, "Pirate Flag": pirateflag,},
+      icons: {"Hot Dog" : hotdog, "I Love Tacos" : ilovetacos, "Cannon" : cannon, "Champion" : champion, "Goodluck Charm" : greenclover, "Golden Sombrero" : hat, "Cross" : cross1, "Too Fast" : toofast, "Dragon": dragon, "Eagle": eagle, "Lumbre": lumbre, "Dog": dog, "Rhino": rhino, "Angry Bull": angrybull, "Lion": lion, "Wolf": wolf, "Goat": goat, "Lucky shoe": luckyshoe, "Fries": fries, "Donut": donut, "Pirate Flag": pirateflag, "Angry Bee": angrybee, "Banana": banana, "Bomb": bomb, "Claw": claw, "Diamond": diamond, "Dollar": dollar, "El Gallo": elgallo, "Fox": fox, "Indian": indian, "Lolipop": lolipop, "Pizza": pizza, "Rocket": rocket, "Strawberry": strawberry, "TweenTreasure": tweentreasue, },
       colors: null,
     } ,
     "Jumbo Number": {
