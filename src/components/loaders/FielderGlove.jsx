@@ -308,7 +308,6 @@ export function New({rot, base, colors, personalize, personalizeConfig, xPositio
         </>   
       )}
      
-
       {/*Index Hood or Pad*/}
       {base.finger_option === "Hood" ? (
         <>
