@@ -1204,7 +1204,7 @@ export default function Main() {
                           </a>
                         </div>
                         <div className="options-area ">
-                          <form action="#" method >
+                          <form action="#" method className="overflow-hidden">
                             <div class="row p-3">
                             {data[currentBase].icons && (
                                 <>
@@ -1299,7 +1299,7 @@ export default function Main() {
                           </a>
                         </div>
                         <div className="options-area ">
-                          <form action="#" method>
+                          <form action="#" method className="overflow-hidden">
                             <div className="row p-3">
                               {Object.entries(meshOptions[currentMesh].colors).map(([label, color]) => (
                                 <div className="hb-col-md-2 ">
@@ -1409,7 +1409,7 @@ export default function Main() {
                           </a>
                         </div>
                         <div className="options-area ">
-                          <form action="#" method >
+                          <form action="#" method className="overflow-hidden">
                             <div className="row p-3">
                               {data[currentPersonlize].options && (
                                 <>
@@ -1434,7 +1434,7 @@ export default function Main() {
                               {data[currentPersonlize].textbox && (
                                 <>
                                   {data[currentPersonlize].texttype === "number" && (
-                                    <input className = "rounded-full px-6 w-full focus:ring-0 border-gray-300 focus:border-gray-300 my-3" 
+                                    <input className = "rounded-full px-6 w-full focus:ring-0 border-gray-300 focus:border-gray-300" 
                                       type="number" 
                                       placeholder={currentPersonlize}
                                       max="99"
