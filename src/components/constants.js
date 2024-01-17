@@ -307,7 +307,7 @@ export const thumb_premium_graphics = {
   "Pizza": pizza,
   "Rocket": rocket,
   "Strawberry": strawberry,
-  "TweenTreasure": tweentreasue
+  "Tween Treasure": tweentreasue
 }
 
 export const fonts = {
@@ -1020,7 +1020,7 @@ export const meshOptions = {
     "Premium Graphic": {
       textbox: false,
       options: null,
-      icons: {"Hot Dog" : hotdog, "I Love Tacos" : ilovetacos, "Cannon" : cannon, "Champion" : champion, "Goodluck Charm" : greenclover, "Golden Sombrero" : hat, "Cross" : cross1, "Too Fast" : toofast, "Dragon": dragon, "Eagle": eagle, "Lumbre": lumbre, "Dog": dog, "Rhino": rhino, "Angry Bull": angrybull, "Lion": lion, "Wolf": wolf, "Goat": goat, "Lucky shoe": luckyshoe, "Fries": fries, "Donut": donut, "Pirate Flag": pirateflag, "Angry Bee": angrybee, "Banana": banana, "Bomb": bomb, "Claw": claw, "Diamond": diamond, "Dollar": dollar, "El Gallo": elgallo, "Fox": fox, "Indian": indian, "Lolipop": lolipop, "Pizza": pizza, "Rocket": rocket, "Strawberry": strawberry, "TweenTreasure": tweentreasue, },
+      icons: {"Hot Dog" : hotdog, "I Love Tacos" : ilovetacos, "Cannon" : cannon, "Champion" : champion, "Goodluck Charm" : greenclover, "Golden Sombrero" : hat, "Cross" : cross1, "Too Fast" : toofast, "Dragon": dragon, "Eagle": eagle, "Lumbre": lumbre, "Dog": dog, "Rhino": rhino, "Angry Bull": angrybull, "Lion": lion, "Wolf": wolf, "Goat": goat, "Lucky shoe": luckyshoe, "Fries": fries, "Donut": donut, "Pirate Flag": pirateflag, "Angry Bee": angrybee, "Banana": banana, "Bomb": bomb, "Claw": claw, "Diamond": diamond, "Dollar": dollar, "El Gallo": elgallo, "Fox": fox, "Indian": indian, "Lolipop": lolipop, "Pizza": pizza, "Rocket": rocket, "Strawberry": strawberry, "Tween Treasure": tweentreasue, },
       colors: null,
     } ,
     "Jumbo Number": {

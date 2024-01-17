@@ -161,7 +161,6 @@ const EmbroideredLogo = ({ geometry, material, color, position, rotation, scale,
 //   );
 // };
 
-
 export function New({rot, base, colors, personalize, personalizeConfig, xPosition, yPosition, zPosition, xRotation, yRotation, zRotation, textures }) {
   const ref = useRef();
   const { nodes, materials } = useGLTF('./Model/Fielder.glb')
@@ -179,7 +178,6 @@ export function New({rot, base, colors, personalize, personalizeConfig, xPositio
   useFrame(() => {
     ref.current.rotation.y = rot
   })
-
 
   return (
     <group dispose={null} position={[0, -2.1, 0]} scale={[26, 26, 26]} ref={ref}>
@@ -254,7 +252,6 @@ export function New({rot, base, colors, personalize, personalizeConfig, xPositio
           )}
         </>
       )}
-
 
       {/*Body Palm*/}
       {textures.palm ? (
@@ -452,7 +449,7 @@ export function New({rot, base, colors, personalize, personalizeConfig, xPositio
               ) : (
                 <mesh geometry={nodes.polySurface332.geometry} material-color={colors.leather1} material={materials.Thumb_Outer} position={[-0.007, 0.013, 0.009]} rotation={[1.617, -0.085, -2.45]} scale={0.008} />
               )}
-              <ThumbGraphic nodes={nodes} materials={materials} position={[0.043, 0.048, 0.016]} rotation={[Math.PI*2.915, Math.PI*1.10075, Math.PI*-0.6625]} scale={0.012} personalize={personalize}/>
+              <ThumbGraphic nodes={nodes} materials={materials} position={[0.043, 0.048, 0.016]} rotation={[Math.PI*2.915, Math.PI*1.10075, Math.PI*-0.6625]} scale={[0.014, 0.016, 0.017]} personalize={personalize}/>
               {/* <mesh geometry={nodes.shaka.geometry} material={materials.shaka} position={[0.036, 0.039, 0.023]} rotation={[2.744, 0.257, -1.083]} scale={0.012} /> */}
             </>
           )}
@@ -620,7 +617,7 @@ export function New({rot, base, colors, personalize, personalizeConfig, xPositio
               {personalize["Thumb Logo/Graphic"] === "Graphic (+$7)" && (
                 <>
                   <MeshWithTexture geometry={nodes.polySurface332.geometry} material-color={colors.inlay} material={materials.Thumb_Outer} position={[-0.007, 0.013, 0.009]} rotation={[1.617, -0.085, -2.45]} scale={0.008} texture={textures.inlay} />
-                  <ThumbGraphic nodes={nodes} materials={materials} position={[0.043, 0.048, 0.016]} rotation={[Math.PI*2.915, Math.PI*1.10075, Math.PI*-0.6625]} scale={0.012} personalize={personalize}/>
+                  <ThumbGraphic nodes={nodes} materials={materials} position={[0.043, 0.048, 0.016]} rotation={[Math.PI*2.915, Math.PI*1.10075, Math.PI*-0.6625]} scale={[0.014, 0.016, 0.017]} personalize={personalize}/>
                   {/* <mesh geometry={nodes.shaka.geometry} material={materials.shaka} position={[0.036, 0.039, 0.023]} rotation={[2.744, 0.257, -1.083]} scale={0.012} /> */}
                 </>
               )}
@@ -712,7 +709,7 @@ export function New({rot, base, colors, personalize, personalizeConfig, xPositio
               {personalize["Thumb Logo/Graphic"] === "Graphic (+$7)" && (
                 <>
                   <mesh geometry={nodes.polySurface332.geometry} material-color={colors.inlay} material={materials.Thumb_Outer} position={[-0.007, 0.013, 0.009]} rotation={[1.617, -0.085, -2.45]} scale={0.008} />
-                  <ThumbGraphic nodes={nodes} materials={materials} position={[0.043, 0.048, 0.016]} rotation={[Math.PI*2.915, Math.PI*1.10075, Math.PI*-0.6625]} scale={0.012} personalize={personalize}/>
+                  <ThumbGraphic nodes={nodes} materials={materials} position={[0.043, 0.048, 0.016]} rotation={[Math.PI*2.915, Math.PI*1.10075, Math.PI*-0.6625]} scale={[0.014, 0.016, 0.017]} personalize={personalize}/>
                   {/* <mesh geometry={nodes.shaka.geometry} material={materials.shaka} position={[0.036, 0.039, 0.023]} rotation={[2.744, 0.257, -1.083]} scale={0.012} /> */}
                 </>
               )}
