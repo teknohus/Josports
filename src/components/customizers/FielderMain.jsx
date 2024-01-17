@@ -1067,7 +1067,7 @@ export default function Main() {
                         .map(([key, value]) => (  
                           <li key={key}>
                             <button onClick={() => {handleNavBase(key)}}>{format_Text(key)} </button>
-                            <div style={{color: "red"}}>{baseRequired[key] ? "*" : ""}</div>
+                            <span className="ps-2 d-inline" style={{color: "red"}}>{baseRequired[key] ? "*" : ""}</span>
                             <span>{value === null ? "No" : value}</span>
                           </li>
                         ))}
@@ -1090,7 +1090,7 @@ export default function Main() {
                           return (
                             <li key={key}>
                               <button onClick={() => {handleNavColor(key)}}>{format_Text(key)}</button>
-                              <div style={{color: "red"}}>{colorRequired[key] ? "*" : ""}</div>
+                              <span className="d-inline ps-2" style={{color: "red"}}>{colorRequired[key] ? "*" : ""}</span>
                               {textures[key] ? (
                                 <span>{textureName}</span>
                               ) : (
@@ -1117,13 +1117,13 @@ export default function Main() {
                     </h2>
                   </div>
                   <div className="hb-side-nav">
-                    <ul>
+                    <ul className="hb-padding-100">
                       {Object.entries(filteredPersonalizeConfig)
                         .filter(([key]) => personilzeSteps[key])
                         .map(([key, value]) => (  
                           <li key={key}>
                             <button onClick={() => {handleNavPersonalization(key)}}>{key}</button>
-                            <div style={{color: "red"}}>{personalizedRequired[key] ? "*" : ""}</div>
+                            <span className="d-inline ps-1" style={{color: "red"}}>{personalizedRequired[key] ? "*" : ""}</span>
                             <span>{value === null ? "No" : value}</span>
                           </li>
                         ))}
@@ -1166,7 +1166,7 @@ export default function Main() {
                       role="tabpanel"
                       aria-labelledby="pills-home-tab"
                     >
-                      <ul className="d-flex justify-content-around">
+                      <ul className="d-flex hb-remain-ul">
                         {baseLeft > 0 ? <li>{baseLeft} remaining</li> : ""}
                         {colorLeft > 0 ? <li>{colorLeft} remaining</li> : ""}
                         {personalizeLeft > 0 ? <li>{personalizeLeft} remaining</li> : ""}
@@ -1204,12 +1204,13 @@ export default function Main() {
                           </a>
                         </div>
                         <div className="options-area ">
-                          <form action="#" method className="d-flex flex-wrap">
-                            <div className="row">
+                          <form action="#" method >
+                            <div class="row p-3">
                             {data[currentBase].icons && (
                                 <>
                                   {Object.entries(data[currentBase].icons).map(([label, img]) => (
-                                    <div className="col-md-4">
+                                    <div className="col-md-4 hb-col-4">
+                                     <div className="hb-image-box">
                                       <img
                                         className={`texture-option1 ${
                                           baseConfig[currentBase] === label ? "selected" : ""
@@ -1219,6 +1220,7 @@ export default function Main() {
                                         alt={label}
                                         onClick={()=>{handleBaseChange(currentBase, label)}}
                                       />
+                                      </div>
                                       <div className="texture-label">
                                         {label}
                                       </div>
@@ -1228,8 +1230,8 @@ export default function Main() {
                                 </>
                               )}
                               {(data[currentBase].options).map(option => (
-                                <div className="col-md-4">
-                                  <label className="hb-label-cust">
+                                <div className="hb-label-styl">
+                                  <label className={`hb-label-cust ${baseConfig[currentBase] === option ? `active` : ``}`}>
                                     {option}
                                     <input
                                       type="radio"
@@ -1259,7 +1261,7 @@ export default function Main() {
                       role="tabpanel"
                       aria-labelledby="pills-home-tab"
                     >
-                      <ul className="d-flex justify-content-around">
+                      <ul className="d-flex hb-remain-ul">
                         {baseLeft > 0 ? <li>{baseLeft} remaining</li> : ""}
                         {colorLeft > 0 ? <li>{colorLeft} remaining</li> : ""}
                         {personalizeLeft > 0 ? <li>{personalizeLeft} remaining</li> : ""}
@@ -1297,10 +1299,10 @@ export default function Main() {
                           </a>
                         </div>
                         <div className="options-area ">
-                          <form action="#" method className="d-flex flex-wrap">
-                            <div className="row">
+                          <form action="#" method>
+                            <div className="row p-3">
                               {Object.entries(meshOptions[currentMesh].colors).map(([label, color]) => (
-                                <div className="col-md-4">
+                                <div className="hb-col-md-2 ">
                                   <div
                                     key={color}
                                     className={`color-option ${
@@ -1316,7 +1318,7 @@ export default function Main() {
                               ))}
                               <br/>
                               {Object.entries(meshOptions[currentMesh].textures).map(([label, img]) => (
-                                <div className="col-md-4">
+                                <div className="hb-col-md-2">
                                   <img
                                     className={`texture-option ${
                                       textures[currentMesh] === img ? "selected" : ""  
@@ -1336,7 +1338,7 @@ export default function Main() {
                                 <div className="exclusive-label">Exclusive Textures</div>
 
                                   {Object.entries(meshOptions[currentMesh].exclusive_textures).map(([label, img]) => (
-                                    <div class="col-md-4">
+                                    <div class="hb-col-md-2">
                                       <img
                                         className={`texture-option ${
                                           textures[currentMesh] === img ? "selected" : ""  
@@ -1369,7 +1371,7 @@ export default function Main() {
                       role="tabpanel"
                       aria-labelledby="pills-home-tab"
                     >
-                      <ul className="d-flex justify-content-around">
+                      <ul className="d-flex hb-remain-ul">
                         {baseLeft > 0 ? <li>{baseLeft} remaining</li> : ""}
                         {colorLeft > 0 ? <li>{colorLeft} remaining</li> : ""}
                         {personalizeLeft > 0 ? <li>{personalizeLeft} remaining</li> : ""}
@@ -1407,13 +1409,13 @@ export default function Main() {
                           </a>
                         </div>
                         <div className="options-area ">
-                          <form action="#" method className="d-flex flex-wrap">
-                            <div className="row">
+                          <form action="#" method >
+                            <div className="row p-3">
                               {data[currentPersonlize].options && (
                                 <>
                                   {(data[currentPersonlize].options).map(option => (
-                                    <div className="col-md-4">
-                                        <label className="hb-label-cust">
+                                    <div className="hb-label-styl">
+                                        <label className={`hb-label-cust ${personlizeConfig[currentPersonlize] === option ? `active` : ``}`}>
                                           {option}
                                           <input
                                             type="radio"
@@ -1460,7 +1462,7 @@ export default function Main() {
                               {data[currentPersonlize].colors && (
                                 <>
                                   {Object.entries(data[currentPersonlize].colors).map(([label, color]) => (
-                                    <div className="col-md-4">
+                                    <div className="hb-col-md-2">
                                       <div
                                         key={color}
                                         className={`color-option ${
@@ -1480,7 +1482,8 @@ export default function Main() {
                               {data[currentPersonlize].icons && (
                                 <>
                                   {Object.entries(data[currentPersonlize].icons).map(([label, img]) => (
-                                    <div className="col-md-4">
+                                    <div className="col-md-4 hb-col-4">
+                                    <div className="hb-image-box">
                                       <img
                                         className={`texture-option2 ${
                                           personlizeConfig[currentPersonlize] === label ? "selected" : ""
@@ -1490,6 +1493,7 @@ export default function Main() {
                                         alt={label}
                                         onClick={()=>{handlePeronalizeChange(currentPersonlize, label)}}
                                       />
+                                      </div>
                                       <div className="texture-label">
                                         {label}
                                       </div>
