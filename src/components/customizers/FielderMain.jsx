@@ -1434,7 +1434,7 @@ export default function Main() {
                               {data[currentPersonlize].textbox && (
                                 <>
                                   {data[currentPersonlize].texttype === "number" && (
-                                    <input className = "rounded-full px-6 w-full focus:ring-0 border-gray-300 focus:border-gray-300" 
+                                    <input className = "rounded-full px-6 w-full focus:ring-0 border-gray-300 focus:border-gray-300 my-3" 
                                       type="number" 
                                       placeholder={currentPersonlize}
                                       max="99"
@@ -1445,7 +1445,7 @@ export default function Main() {
                                   )}
                                   {data[currentPersonlize].texttype === "text" && (
                                     <>
-                                      <input className = "rounded-full px-6 w-full focus:ring-0 border-gray-300 focus:border-gray-300" 
+                                      <input className = "rounded-full px-6 w-full focus:ring-0 border-gray-300 focus:border-gray-300 my-3" 
                                         type="text" 
                                         placeholder={currentPersonlize}
                                         maxLength="17"
