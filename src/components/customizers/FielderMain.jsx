@@ -912,66 +912,48 @@ export default function Main() {
         })
     );
 
-    // const screenshot = captureScreenshot();
+    const screenshot = captureScreenshot();
 
     return {
+      price: price,
       ...enabledBaseOptions,
       ...enabledColorOptions,
       ...enabledPersonalizationOptions,
-      // screenshot: screenshot,
-      // price: price,
+      screenshot: screenshot,
     };
   }
 
   const HandleCheckout = async () => {
-    // if (baseLeft+personalizeLeft+colorLeft > 0) {
-    //   return 
-    // }
-
-    const formData = getFormData()
-
-    saveToFile(formData, "formData")
-
-    const body = JSON.stringify(formData);
-
-    try {
-      // setLoading(true);
-  
-      const res = await fetch('/checkout', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body  
-      });
-  
-      if(!res.ok) {
-        throw new Error('Submit failed'); 
-      }
-  
-      // submitted successfully
-      // setLoading(false);
-      // setOrderStatus('Order placed successfully!');
-      console.log('Order Placed successfully')
-  
-    } catch (err) {
-      
-      // setLoading(false);
-      
-      if(err.response && err.response.data) {
-        // server responded with an error 
-        // setError(err.response.data);
-        console.log(err.response.data)
-      } else {
-        // request failed or no response
-        // setError('Submission failed, please try again');  
-        console.log("Submission failed, please try again")
-      }
+    if (baseLeft + personalizeLeft + colorLeft > 0) {
+      return;
     }
+    // Create a form element
+    const form = document.createElement('form');
+    
+    // Set the action to the cart url
+    form.action = 'https://legendsportspro.com/cart';
+    
+    // Set the method to post 
+    form.method = 'POST';
+    
+    // Call the getFormData function to get the data
+    const formData = getFormData();
+    
+    // Loop through and add each data as inputs
+    for (const key in formData) {
+      const input = document.createElement('input');
+    input.type = 'hidden';
+    input.name = key;
+    input.value = formData[key];
+    form.appendChild(input);  
+  }
 
-    // console.log("Checkout Complete")
-    // console.log(formData)
-  }  
+    // Add the form to body
+    document.body.appendChild(form);
+
+    // Submit the form
+    form.submit(); 
+  }
   
   const filteredBaseConfig = filterData(Object.entries(baseConfig)); 
   const filteredColorConfig = filterData(Object.entries(colors)); 
@@ -985,7 +967,7 @@ export default function Main() {
       {/* Product Block */}
       <div className="product-block">
         <div className="container">
-          <div className="row">
+          <div className="row mw-100">
             <div className="col-lg-6 col-xl-5 mb-5 mb-lg-0">
               <div className="filter-area d-flex justify-content-between">
                 {/* <div> */}
@@ -994,7 +976,7 @@ export default function Main() {
                   type="button"
                   onClick={BarNavToggle}
                 >
-                  <img src={`/images/menu.svg`} alt="Ham" />
+                  <img src={`/wp-content/reactpress/apps/builder/build/images/menu.svg`} alt="Ham" />
                 </button>
                 <button type="button" className="btn" onClick={resetConfig}>
                   reset
@@ -1167,9 +1149,9 @@ export default function Main() {
                       aria-labelledby="pills-home-tab"
                     >
                       <ul className="d-flex hb-remain-ul">
-                        {baseLeft > 0 ? <li>{baseLeft} remaining</li> : ""}
-                        {colorLeft > 0 ? <li>{colorLeft} remaining</li> : ""}
-                        {personalizeLeft > 0 ? <li>{personalizeLeft} remaining</li> : ""}
+                        {baseLeft > 0 ? <li><span>{baseLeft} remaining</span></li> : <li></li>}
+                        {colorLeft > 0 ? <li><span>{colorLeft} remaining</span></li> : <li></li>}
+                        {personalizeLeft > 0 ? <li><span>{personalizeLeft} remaining</span></li> : <li></li>}
                       </ul>
                       <div className="variants-categories-block position-relative">
                       <div className="variants-categories d-flex justify-content-center">
@@ -1197,7 +1179,7 @@ export default function Main() {
                           >
                             <img
                               className="me-1"
-                              src={`/images/help.svg`}
+                              src={`/wp-content/reactpress/apps/builder/build/images/help.svg`}
                               alt="Help"
                             />
                             help
@@ -1262,9 +1244,9 @@ export default function Main() {
                       aria-labelledby="pills-home-tab"
                     >
                       <ul className="d-flex hb-remain-ul">
-                        {baseLeft > 0 ? <li>{baseLeft} remaining</li> : ""}
-                        {colorLeft > 0 ? <li>{colorLeft} remaining</li> : ""}
-                        {personalizeLeft > 0 ? <li>{personalizeLeft} remaining</li> : ""}
+                         {baseLeft > 0 ? <li><span>{baseLeft} remaining</span></li> : <li></li>}
+                        {colorLeft > 0 ? <li><span>{colorLeft} remaining</span></li> : <li></li>}
+                        {personalizeLeft > 0 ? <li><span>{personalizeLeft} remaining</span></li> : <li></li>}
                       </ul>
                       <div className="variants-categories-block position-relative">
                         <div className="variants-categories d-flex justify-content-center">
@@ -1292,7 +1274,7 @@ export default function Main() {
                           >
                             <img
                               className="me-1"
-                              src={`/images/help.svg`}
+                              src={`/wp-content/reactpress/apps/builder/build/images/help.svg`}
                               alt="Help"
                             />
                             help
@@ -1372,9 +1354,9 @@ export default function Main() {
                       aria-labelledby="pills-home-tab"
                     >
                       <ul className="d-flex hb-remain-ul">
-                        {baseLeft > 0 ? <li>{baseLeft} remaining</li> : ""}
-                        {colorLeft > 0 ? <li>{colorLeft} remaining</li> : ""}
-                        {personalizeLeft > 0 ? <li>{personalizeLeft} remaining</li> : ""}
+                         {baseLeft > 0 ? <li><span>{baseLeft} remaining</span></li> : <li></li>}
+                        {colorLeft > 0 ? <li><span>{colorLeft} remaining</span></li> : <li></li>}
+                        {personalizeLeft > 0 ? <li><span>{personalizeLeft} remaining</span></li> : <li></li>}
                       </ul>
                       <div className="variants-categories-block position-relative">
                         <div className="variants-categories d-flex justify-content-center">
@@ -1402,7 +1384,7 @@ export default function Main() {
                           >
                             <img
                               className="me-1"
-                              src={`/images/help.svg`}
+                              src={`/wp-content/reactpress/apps/builder/build/images/help.svg`}
                               alt="Help"
                             />
                             help
@@ -1534,7 +1516,8 @@ export default function Main() {
                   /> */}
               </div>
               <div className="add-cart-box">
-                <button href="#" className="btn btn-secondry" onClick={HandleCheckout} disabled={(baseLeft + colorLeft + personalizeLeft) > 0}>
+                <button href="#" className="hb-btn btn-secondry" onClick={HandleCheckout} disabled={(baseLeft + colorLeft + personalizeLeft) > 0}>
+                {/* <button href="#" className="hb-btn btn-secondry" onClick={HandleCheckout}> */}
                   add to cart ${usePricing && price}
                 </button>
                 {(baseLeft + colorLeft + personalizeLeft) > 0 && (
