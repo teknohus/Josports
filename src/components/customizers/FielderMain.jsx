@@ -1,16 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import ProductSlideshow from "./FielderSlider";
 import { meshOptions, baseReq, colorReq, personlizationReq, colorData, colorPalette, allColors, texturePalette, tabs, textureData, colorStepsConfig, baseOptions, personlizationOptions, personlizationConfig, Options, baseStepsConfig } from "../constants";
-import Controls from "../controls"
-
-const saveToFile = (data, fileName) => {
-  const jsonContent = JSON.stringify(data, null, 2);
-  const blob = new Blob([jsonContent], { type: 'application/json' });
-  const link = document.createElement('a');
-  link.href = URL.createObjectURL(blob);
-  link.download = fileName;
-  link.click();
-};
+// import Controls from "../controls"
 
 function usePricing(baseConfig, personalizeConfig) {
 
@@ -105,12 +96,12 @@ export default function Main() {
     );
   }, [personlizeConfig, personilzeSteps]) 
   
-  const [xPosition, setXPosition] = useState(9.25);
-  const [yPosition, setYPosition] = useState(0.039);
-  const [zPosition, setZPosition] = useState(0.023);
-  const [xRotation, setXRotation] = useState(2.915);
-  const [yRotation, setYRotation] = useState(1.132);
-  const [zRotation, setZRotation] = useState(-0.6625);
+  // const [xPosition, setXPosition] = useState(9.25);
+  // const [yPosition, setYPosition] = useState(0.039);
+  // const [zPosition, setZPosition] = useState(0.023);
+  // const [xRotation, setXRotation] = useState(2.915);
+  // const [yRotation, setYRotation] = useState(1.132);
+  // const [zRotation, setZRotation] = useState(-0.6625);
   
   useEffect(() =>{
     if (personlizeConfig["Thumb Text"] === "Thumb Text" && personlizeConfig["Thumb Text Text"] !== ""){
@@ -975,7 +966,7 @@ export default function Main() {
                   type="button"
                   onClick={BarNavToggle}
                 >
-                  <img src={`/wp-content/reactpress/apps/builder/build/images/menu.svg`} alt="Ham" />
+                  <img src={`/images/menu.svg`} alt="Ham" />
                 </button>
                 <button type="button" className="btn" onClick={resetConfig}>
                   reset
@@ -1178,20 +1169,20 @@ export default function Main() {
                           >
                             <img
                               className="me-1"
-                              src={`/wp-content/reactpress/apps/builder/build/images/help.svg`}
+                              src={`/images/help.svg`}
                               alt="Help"
                             />
                             help
                           </a>
                         </div>
                         <div className="options-area ">
-                          <form action="#" method className="overflow-hidden">
-                            <div class="row p-3">
+                          <form action="#" method="" className="overflow-hidden">
+                            <div className="row p-3">
                             {data[currentBase].icons && (
                                 <>
                                   {Object.entries(data[currentBase].icons).map(([label, img]) => (
                                     <div className="col-md-4 hb-col-4">
-                                     <div className="hb-image-box">
+                                     <div key={label} className="hb-image-box">
                                       <img
                                         className={`texture-option1 ${
                                           baseConfig[currentBase] === label ? "selected" : ""
@@ -1211,15 +1202,15 @@ export default function Main() {
                                 </>
                               )}
                               {(data[currentBase].options).map(option => (
-                                <div className="hb-label-styl">
+                                <div key={option} className="hb-label-styl">
                                   <label className={`hb-label-cust ${baseConfig[currentBase] === option ? `active` : ``}`}>
                                     {option}
                                     <input
                                       type="radio"
                                       id={`radio-${option}`}
-                                      defaultChecked="checked"
                                       name="option-radio"
                                       checked={baseConfig[currentBase] === option}
+                                      onChange={() => handleBaseChange(currentBase, option)} 
                                       onClick={()=>{handleBaseChange(currentBase, option)}}
                                     />
                                     <span className="checkmark" />
@@ -1273,17 +1264,17 @@ export default function Main() {
                           >
                             <img
                               className="me-1"
-                              src={`/wp-content/reactpress/apps/builder/build/images/help.svg`}
+                              src={`/images/help.svg`}
                               alt="Help"
                             />
                             help
                           </a>
                         </div>
                         <div className="options-area ">
-                          <form action="#" method className="overflow-hidden">
+                          <form action="#" method="" className="overflow-hidden">
                             <div className="row p-3">
                               {Object.entries(meshOptions[currentMesh].colors).map(([label, color]) => (
-                                <div className="hb-col-md-2 ">
+                                <div key={label} className="hb-col-md-2 ">
                                   <div
                                     key={color}
                                     className={`color-option ${
@@ -1319,7 +1310,7 @@ export default function Main() {
                                 <div className="exclusive-label">Exclusive Textures</div>
 
                                   {Object.entries(meshOptions[currentMesh].exclusive_textures).map(([label, img]) => (
-                                    <div class="hb-col-md-2">
+                                    <div className="hb-col-md-2">
                                       <img
                                         className={`texture-option ${
                                           textures[currentMesh] === img ? "selected" : ""  
@@ -1383,14 +1374,14 @@ export default function Main() {
                           >
                             <img
                               className="me-1"
-                              src={`/wp-content/reactpress/apps/builder/build/images/help.svg`}
+                              src={`/images/help.svg`}
                               alt="Help"
                             />
                             help
                           </a>
                         </div>
                         <div className="options-area ">
-                          <form action="#" method className="overflow-hidden">
+                          <form action="#" method="" className="overflow-hidden">
                             <div className="row p-3">
                               {data[currentPersonlize].options && (
                                 <>
@@ -1497,22 +1488,6 @@ export default function Main() {
                 >
 
                 </div>
-                  {/* <Controls
-                    controls={{
-                      xPosition,
-                      yPosition,
-                      zPosition,
-                      xRotation,
-                      yRotation,
-                      zRotation,
-                      setXPosition,
-                      setYPosition,
-                      setZPosition,
-                      setXRotation,
-                      setYRotation,
-                      setZRotation,
-                    }}
-                  /> */}
               </div>
               <div className="add-cart-box">
                 <button href="#" className="hb-btn btn-secondry" onClick={HandleCheckout} disabled={(baseLeft + colorLeft + personalizeLeft) > 0}>
@@ -1528,7 +1503,7 @@ export default function Main() {
               </div>
             </div>
             
-            <ProductSlideshow baseConfig={baseConfig} colors={colors} textures={textures} personlizeConfig={personlizeConfig} personlizationConfig={personlizationConfig} xPosition={xPosition} yPosition={yPosition} zPosition={zPosition} xRotation={xRotation} yRotation={yRotation} zRotation={zRotation} />
+            <ProductSlideshow baseConfig={baseConfig} colors={colors} textures={textures} personlizeConfig={personlizeConfig} personlizationConfig={personlizationConfig} />
           </div>
           {/* <button onClick={captureScreenshot}>Capture Screenshot</button> */}
         </div>

@@ -10,15 +10,6 @@ import silvershiny from '../../assets/textures/silver shiny/base_base_BaseColor.
 import redshiny from '../../assets/textures/red shiny/base_base_BaseColor.png'
 import blueshiny from '../../assets/textures/blue shiny/base_base_BaseColor.png'
 
-// const saveToFile = (data, fileName) => {
-//   const jsonContent = JSON.stringify(data, null, 2);
-//   const blob = new Blob([jsonContent], { type: 'application/json' });
-//   const link = document.createElement('a');
-//   link.href = URL.createObjectURL(blob);
-//   link.download = fileName;
-//   link.click();
-// };
-
 const MeshWithTexture = ({ geometry, material, color, position, rotation, scale, texture, tsize=9.25 }) => {
   let shiny = false
   if (texture === goldshiny || texture === silvershiny || texture === redshiny || texture === blueshiny){
@@ -164,7 +155,7 @@ const EmbroideredLogo = ({ geometry, material, color, position, rotation, scale,
 export function New({rot, base, colors, personalize, personalizeConfig, xPosition, yPosition, zPosition, xRotation, yRotation, zRotation, textures }) {
   const ref = useRef();
 
-  const { nodes, materials } = useGLTF("/wp-content/reactpress/apps/builder/build/Model/Fielder.glb")
+  const { nodes, materials } = useGLTF("/Model/Fielder.glb")
   
   // const myFont = new FontLoader().parse(fontArrayBuffer);
 
@@ -1282,4 +1273,4 @@ export function New({rot, base, colors, personalize, personalizeConfig, xPositio
   )
 }
 
-useGLTF.preload("/wp-content/reactpress/apps/builder/build/Model/Fielder.glb")
+useGLTF.preload("/Model/Fielder.glb")

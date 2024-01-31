@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@mediapipe/tasks-vision": "^0.10.9",
     "@react-spring/three": "^9.7.3",
     "@react-three/drei": "9.76.0",
     "@react-three/fiber": "8.13.3",
@@ -28,8 +29,8 @@
     "typescript": "3.8.3"
   },
   "scripts": {
-    "start": "set PUBLIC_URL=/wp-content/reactpress/apps/builder/build&&react-scripts start",
-    "build": "set PUBLIC_URL=/wp-content/reactpress/apps/builder/build&&react-scripts build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
