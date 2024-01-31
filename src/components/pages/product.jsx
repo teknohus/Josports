@@ -1,17 +1,15 @@
 import React from "react"; 
-import { useNavigate } from 'react-router-dom';
 
 export default function Product() {
-  const navigate = useNavigate(); 
 
   const handleCatcher = () => {
-    navigate('/catcher');
+    
   }
   const handleFielder = () => {
-    navigate('/fielder');
+    
   }
   const handleFB = () => {
-    navigate('/firstbase');
+    
   }
 
    return(
@@ -22,7 +20,7 @@ export default function Product() {
         <div className="heading">
           <h2>Glove Builder</h2>
         </div>
-        <div className="row justify-content-center text-center">
+        <div className="row justify-content-center text-center mw-100">
           <div className="col-sm-3 col-5">
             <div className="hb-content bg-white ">
               <div className="hb-content-header">
@@ -35,10 +33,10 @@ export default function Product() {
                 </div>
               </div>
               <div className="image-box my-3">
-                <img src="images/catcher.png" className="mx-auto" alt="layer-45" />
+                <img src={`/wp-content/reactpress/apps/builder/build/images/catcher.png`} className="mx-auto" alt="layer-45" />
               </div>
               <div className="btn-box text-center">
-                <button onClick={handleCatcher} className="btn">Select</button>
+                <button onClick={handleCatcher} className="btn" disabled>Coming Soon</button>
               </div>
             </div>
           </div>
@@ -54,7 +52,7 @@ export default function Product() {
                 </div>
               </div>
               <div className="image-box my-3">
-                <img src="images/fielder.png" className="mx-auto" alt="layer-45" />
+                <img src={`/wp-content/reactpress/apps/builder/build/images/fielder.png`} className="mx-auto" alt="layer-45" />
               </div>
               <div className="btn-box text-center">
                 <button onClick={handleFielder} className="btn">Select</button>
@@ -73,10 +71,10 @@ export default function Product() {
                 </div>
               </div>
               <div className="image-box my-3">
-                <img src="images/firstbase.png" className="mx-auto" alt="layer-45" />
+                <img src={`/wp-content/reactpress/apps/builder/build/images/firstbase.png`} className="mx-auto" alt="layer-45" />
               </div>
               <div className="btn-box text-center">
-                <button onClick={handleFB} className="btn">Select</button>
+                <button onClick={handleFB} className="btn" disabled>Coming Soon</button>
               </div>
             </div>
           </div>

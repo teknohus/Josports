@@ -164,7 +164,6 @@ const EmbroideredLogo = ({ geometry, material, color, position, rotation, scale,
 export function New({rot, base, colors, personalize, personalizeConfig, xPosition, yPosition, zPosition, xRotation, yRotation, zRotation, textures }) {
   const ref = useRef();
 
-
   const { nodes, materials } = useGLTF("/wp-content/reactpress/apps/builder/build/Model/Fielder.glb")
   
   // const myFont = new FontLoader().parse(fontArrayBuffer);
@@ -216,11 +215,11 @@ export function New({rot, base, colors, personalize, personalizeConfig, xPositio
       )}
       {personalize["Pinky Text"] && (
         <Text
-          font={fonts[personalize["Text Font"]]}
-          position={[-0.0666, 0.127, -0.0063]}
-          rotation={[-0.12765*Math.PI, -0.34375*Math.PI, -0.56375*Math.PI]}
-          color={personalize["Pinky Text Color"]}
-          scale={
+        font={fonts[personalize["Text Font"]]}
+        position={[-0.0666, 0.127, -0.0063]}
+        rotation={[-0.12765*Math.PI, -0.34375*Math.PI, -0.56375*Math.PI]}
+        color={personalize["Pinky Text Color"]}
+        scale={
             personalize["Pinky Text Text"]?.length > 10  
             ? 0.0085 - 0.0005 * (personalize["Pinky Text Text"]?.length - 10)  
             : 0.0085
@@ -232,7 +231,7 @@ export function New({rot, base, colors, personalize, personalizeConfig, xPositio
       {personalize["Palm Text"] && (
         <Text
           font={fonts[personalize["Text Font"]]}
-          position={[-0.016, 0.044, 0.025]}
+          position={[-0.016, 0.044, 0.0275]}
           rotation={[0.09375*Math.PI, -0.115*Math.PI, 0.03*Math.PI]}
           color={personalize["Palm Text Color"]}
           scale={

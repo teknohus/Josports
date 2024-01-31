@@ -1,21 +1,24 @@
 {
   "files": {
-    "main.css": "/wp-content/reactpress/apps/builder/build/static/css/main.67c4a9bd.css",
-    "main.js": "/wp-content/reactpress/apps/builder/build/static/js/main.f9a2badc.js",
-    "static/media/Texture1.png": "/wp-content/reactpress/apps/builder/build/static/media/Texture1.ef3b565c525644f9963b.png",
+    "main.css": "/wp-content/reactpress/apps/builder/build/static/css/main.f85eea92.css",
+    "main.js": "/wp-content/reactpress/apps/builder/build/static/js/main.0feac1fc.js",
     "static/media/Hot Pink Snakeskin Art Spots.png": "/wp-content/reactpress/apps/builder/build/static/media/Hot Pink Snakeskin Art Spots.5d024125c1f223c7321f.png",
     "static/media/Pink Snakeskin Art Spots.png": "/wp-content/reactpress/apps/builder/build/static/media/Pink Snakeskin Art Spots.729afb2b28386d110305.png",
     "static/media/Teal Snakeskin Art Spots.png": "/wp-content/reactpress/apps/builder/build/static/media/Teal Snakeskin Art Spots.027269bef9d21274a9d2.png",
     "static/media/a_skin.png": "/wp-content/reactpress/apps/builder/build/static/media/a_skin.af62c3a717fc93adf4d3.png",
-    "static/media/Pink Art Spots.png": "/wp-content/reactpress/apps/builder/build/static/media/Pink Art Spots.bc8ac7fd9079bdacb16f.png",
     "static/media/inlay_initialShadingGroup_Diffuse.png": "/wp-content/reactpress/apps/builder/build/static/media/inlay_initialShadingGroup_Diffuse.a0f266f6c82f689be04d.png",
-    "static/media/Lime Green Paint Spots.png": "/wp-content/reactpress/apps/builder/build/static/media/Lime Green Paint Spots.5e95232f57f38fc6c2ff.png",
     "static/media/Teal Art Spots.png": "/wp-content/reactpress/apps/builder/build/static/media/Teal Art Spots.62e02e030d99d1e59920.png",
-    "static/media/Sky Blue Art Spots.png": "/wp-content/reactpress/apps/builder/build/static/media/Sky Blue Art Spots.f636cbd498ae63644c68.png",
+    "static/media/Pink Art Spots.png": "/wp-content/reactpress/apps/builder/build/static/media/Pink Art Spots.1d53d91989e51f3f4826.png",
+    "static/media/Lime Green Paint Spots.png": "/wp-content/reactpress/apps/builder/build/static/media/Lime Green Paint Spots.7455905e2cd43dc8708f.png",
+    "static/media/Mint Vintage.png": "/wp-content/reactpress/apps/builder/build/static/media/Mint Vintage.465df46dfbb3d26b180d.png",
+    "static/media/White Vintage.png": "/wp-content/reactpress/apps/builder/build/static/media/White Vintage.d2988ce669e33d451198.png",
+    "static/media/Sky Blue Art Spots.png": "/wp-content/reactpress/apps/builder/build/static/media/Sky Blue Art Spots.964e095d416cf0e63271.png",
     "static/media/snake skin brown.png": "/wp-content/reactpress/apps/builder/build/static/media/snake skin brown.408b2e4cb640cb253b16.png",
     "static/media/Green Gradient.png": "/wp-content/reactpress/apps/builder/build/static/media/Green Gradient.bc4b20d6ad67cd57d631.png",
     "static/media/Midnight City Edition.png": "/wp-content/reactpress/apps/builder/build/static/media/Midnight City Edition.cd5da6406d82cb964f48.png",
+    "static/media/Gray Vintage.png": "/wp-content/reactpress/apps/builder/build/static/media/Gray Vintage.e0a7283a51f4e3d5dcdc.png",
     "static/media/MetalGoldPaint002_COL_1K_METALNESS.png": "/wp-content/reactpress/apps/builder/build/static/media/MetalGoldPaint002_COL_1K_METALNESS.330cf7582e56465161f4.png",
+    "static/media/Black Vintage.png": "/wp-content/reactpress/apps/builder/build/static/media/Black Vintage.270434826c21c7d5d25f.png",
     "static/media/rainbow.jpg": "/wp-content/reactpress/apps/builder/build/static/media/rainbow.c90b9345b3e5589d93e1.jpg",
     "static/media/snake skin red.png": "/wp-content/reactpress/apps/builder/build/static/media/snake skin red.269324448a63456b3b38.png",
     "static/media/snake skin light blue.png": "/wp-content/reactpress/apps/builder/build/static/media/snake skin light blue.c84ef730aa0a9834b423.png",
@@ -31,15 +34,10 @@
     "static/media/snake skin grey.png": "/wp-content/reactpress/apps/builder/build/static/media/snake skin grey.4ad7c53bd15eeb6266b4.png",
     "static/media/snake skin teal.png": "/wp-content/reactpress/apps/builder/build/static/media/snake skin teal.7fa7916a9f0786a2e1e7.png",
     "static/media/cow skin furred.png": "/wp-content/reactpress/apps/builder/build/static/media/cow skin furred.08c40b11d7085da40818.png",
-    "static/media/Texture2.png": "/wp-content/reactpress/apps/builder/build/static/media/Texture2.3d39620e32123e9cdc48.png",
     "static/media/Red Vintage.png": "/wp-content/reactpress/apps/builder/build/static/media/Red Vintage.4a8dcff2f7868a47b4c6.png",
     "static/media/green camo.jpg": "/wp-content/reactpress/apps/builder/build/static/media/green camo.9199c7560e6514739a59.jpg",
     "static/media/snake skin black.png": "/wp-content/reactpress/apps/builder/build/static/media/snake skin black.6b64ab504f377019dceb.png",
-    "static/media/Mint Vintage.png": "/wp-content/reactpress/apps/builder/build/static/media/Mint Vintage.18380582dc48e8b2c2ca.png",
     "static/media/elephant skin.png": "/wp-content/reactpress/apps/builder/build/static/media/elephant skin.66eead650505f0872cc1.png",
-    "static/media/White Vintage.png": "/wp-content/reactpress/apps/builder/build/static/media/White Vintage.3f431557082015d80b7b.png",
-    "static/media/Gray Vintage.png": "/wp-content/reactpress/apps/builder/build/static/media/Gray Vintage.c1900cc2ee1cc82ab7eb.png",
-    "static/media/Black Vintage.png": "/wp-content/reactpress/apps/builder/build/static/media/Black Vintage.57ddc44079b07dfc17f8.png",
     "static/media/invert-elephant-skin.jpg": "/wp-content/reactpress/apps/builder/build/static/media/invert-elephant-skin.4dc51b1117302fd39a22.jpg",
     "static/media/LogoVenezuela.jpg": "/wp-content/reactpress/apps/builder/build/static/media/LogoVenezuela.477450ed76f8e1f00908.jpg",
     "static/media/LogoDR.jpg": "/wp-content/reactpress/apps/builder/build/static/media/LogoDR.a159bd340f15eae29a5a.jpg",
@@ -136,11 +134,11 @@
     "static/media/slick.eot": "/wp-content/reactpress/apps/builder/build/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/wp-content/reactpress/apps/builder/build/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/wp-content/reactpress/apps/builder/build/static/media/slick.295183786cd8a1389865.woff",
-    "main.67c4a9bd.css.map": "/wp-content/reactpress/apps/builder/build/static/css/main.67c4a9bd.css.map",
-    "main.f9a2badc.js.map": "/wp-content/reactpress/apps/builder/build/static/js/main.f9a2badc.js.map"
+    "main.f85eea92.css.map": "/wp-content/reactpress/apps/builder/build/static/css/main.f85eea92.css.map",
+    "main.0feac1fc.js.map": "/wp-content/reactpress/apps/builder/build/static/js/main.0feac1fc.js.map"
   },
   "entrypoints": [
-    "static/css/main.67c4a9bd.css",
-    "static/js/main.f9a2badc.js"
+    "static/css/main.f85eea92.css",
+    "static/js/main.0feac1fc.js"
   ]
 }

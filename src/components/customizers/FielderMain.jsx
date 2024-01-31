@@ -216,16 +216,19 @@ export default function Main() {
   const handleNavBase = (key) => {
     setCurrentTab(tabs[0])
     setCurrentBase(key)
+    setIsBarOpen((prevIsBarOpen) => !prevIsBarOpen);
   }
   
   const handleNavColor = (key) => {
     setCurrentTab(tabs[1])
     setCurrentMesh(key)
+    setIsBarOpen((prevIsBarOpen) => !prevIsBarOpen);
   }
 
   const handleNavPersonalization = (key) => {
     setCurrentTab(tabs[2])
     setCurrentPersonlize(key)
+    setIsBarOpen((prevIsBarOpen) => !prevIsBarOpen);
   }
 
   const handleColorChange = (meshName, newColor) => {
@@ -849,12 +852,6 @@ export default function Main() {
     setScreenshots([...screenshots, screenshot]);
 
     return screenshot
-  
-    // Download the composite screenshot
-    // const link = document.createElement('a');
-    // link.href = screenshot;
-    // link.download = 'composite_screenshot.png';
-    // link.click();
   };
 
   const getFormData = () => {
@@ -915,11 +912,13 @@ export default function Main() {
     const screenshot = captureScreenshot();
 
     return {
-      price: price,
+      "Glove Model": "Pro 44",
+      "Glove Sport": "Baseball",
+      "Price": price,
       ...enabledBaseOptions,
       ...enabledColorOptions,
       ...enabledPersonalizationOptions,
-      screenshot: screenshot,
+      "Screenshot": screenshot,
     };
   }
 
