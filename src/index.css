@@ -262,11 +262,7 @@ body.nav-open {overflow: hidden;}
   padding: 20px 10px;
   min-width: 85px;
 }
-
-
-
 }
-
 
 /* -- Bilal--- */
 .product-variants .options-area{height: 240px; overflow-y: scroll;}
@@ -283,7 +279,7 @@ body.nav-open {overflow: hidden;}
   @media (max-width: 767px){
     .hb-label-cust .checkmark {  height: 15px;  width: 15px;    }
     .hb-label-cust .checkmark:after {left: 5px; top: 2px; width: 3px; height: 7px;}
-      .hb-label-cust { padding-left: 22px; margin: 20px 0;  }
+      .hb-label-cust { padding-left: 32px; margin: 20px 0;  }
   .product-block{padding-top: 40px;}
   #filters_opener{width: 50px;}
 }
@@ -855,7 +851,7 @@ border: 2px solid #333;
   @media (max-width: 767px){
     .hb-label-cust .checkmark {  height: 15px;  width: 15px;    }
     .hb-label-cust .checkmark:after {left: 5px; top: 2px; width: 3px; height: 7px;}
-      .hb-label-cust { padding-left: 22px; margin: 20px 0;  }
+      .hb-label-cust { padding-left: 32px; margin: 20px 0;  }
   /* .product-variants .options-area{padding: 20px;} */
   .product-block{padding-top: 40px;}
   #filters_opener{width: 50px;}
@@ -922,4 +918,21 @@ border: 2px solid #333;
 @media (min-width: 1199.98px) {
   .hb-fielders-glove{padding: 70px 0 49px;}
   .hb-fielders-glove h2{font-size: 45px; line-height: 55px; margin-bottom: 69px; }
+}
+
+@media screen and (max-width: 767px){
+  .product-variants #pills-tab li button{font-size: 18px;}
+  .product-variants #pills-tab{padding: 0 10px;}
+  .tab-pane ul li{font-size: 18px;}
+  .Base{padding: 15px;}
+  .variants-categories-block .variants-categories{flex-wrap: wrap;}
+  .product-variants .tab-content::after {right: 55px; height: 35px; width: 70px;}
+}
+@media screen and (max-width: 540px){
+  .product-variants #pills-tab li button{font-size: 12px;}
+  .tab-pane ul li{font-size: 12px;}
+  .product-block .data-card .title{font-size: 18px;}
+  .hb-col-md-2{flex: 0 0 33%; padding: 0 7px !important;}
+  .row.p-3{padding: 15px !important;}
+  .product-block .data-card{padding: 15px 10px;}
 }

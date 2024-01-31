@@ -957,7 +957,7 @@ export default function Main() {
       {/* Product Block */}
       <div className="product-block">
         <div className="container">
-          <div className="row mw-100">
+          <div className="row mw-md-100">
             <div className="col-lg-6 col-xl-5 mb-5 mb-lg-0">
               <div className="filter-area d-flex justify-content-between">
                 {/* <div> */}
