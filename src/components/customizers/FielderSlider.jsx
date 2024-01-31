@@ -21,7 +21,7 @@ function CameraControl() {
 
 const Scene3D = ({ rotation, baseConfig, colors, personlizeConfig, personlizationConfig, textures, xPosition, yPosition, zPosition, xRotation, yRotation, zRotation }) => {
   return (
-    <Canvas gl={{ preserveDrawingBuffer: true }} className="m-auto" shadows dpr={[1, 2]} width={733} height={712} style={{ width: "733px", height: "712px" }}>
+    <Canvas gl={{ preserveDrawingBuffer: true }} className="m-auto" shadows dpr={[1, 2]} height={712} style={{ width: "100%", height: "712px" }}>
       <CameraControl />
       <scene>
         <ambientLight intensity={0.3} color={'#ffffff'} />

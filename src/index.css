@@ -114,7 +114,7 @@ body.nav-open {overflow: hidden;}
 .product-block .filter-area {margin-bottom: 43px;}
 .product-nav .product-img-box {border: 2px solid #b6b6b6;padding: 15px 15px 0;border-radius: 6px;cursor: pointer;}
 .product-nav .slide {padding: 0 8px;}
-.product-slideshow .slick-list{padding: 0 50px;}
+/* .product-slideshow .slick-list{padding: 0 50px;} */
 .slick-arrow {position: absolute;top: 50%;transform: translateY(-50%);background: transparent;border: 0;font-size: 0;line-height: 0;width: 36px;height: 36px;background-position: center;background-repeat: no-repeat;background-size: 100% 100%;z-index: 9;filter: grayscale(100%);transition: all .5s}
 .slick-arrow:hover{background-image: none; background-color: #000;}
 .slick-prev.slick-arrow {left: 5px;background-image: url(./assets/images/left.svg) !important; width: 36px; height: 36px; background-size: cover !important;}
@@ -517,7 +517,7 @@ body.nav-open {overflow: hidden;}
 
 .product-nav .product-img-box {border: 2px solid #b6b6b6;padding: 15px 15px 0;border-radius: 6px;cursor: pointer;}
 .product-nav .slide {padding: 0 8px;}
-.product-slideshow .slick-list{padding: 0 50px;}
+/* .product-slideshow .slick-list{padding: 0 50px;} */
 .slick-arrow {position: absolute;top: 50%;transform: translateY(-10%);background: transparent;border: 0;font-size: 0;line-height: 0;width: 36px;height: 36px;background-position:center;background-repeat: no-repeat;background-size: 100% 100%;z-index: 9;filter: grayscale(100%);transition: all .5s}
 .slick-arrow:hover{background-image: none; background-color: #000;}
 .Base{background-color:#ffff;padding: 10px 30px 30px;}
@@ -927,6 +927,7 @@ border: 2px solid #333;
   .Base{padding: 15px;}
   .variants-categories-block .variants-categories{flex-wrap: wrap;}
   .product-variants .tab-content::after {right: 55px; height: 35px; width: 70px;}
+  .hb-fielders-glove h3{font-size: 20px;}
 }
 @media screen and (max-width: 540px){
   .product-variants #pills-tab li button{font-size: 12px;}
