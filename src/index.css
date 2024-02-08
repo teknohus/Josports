@@ -900,7 +900,7 @@ border: 2px solid #333;
 
 .hb-fielders-glove .container{max-width:1470px; padding: 0px 15px;}
 .hb-fielders-glove{padding: 25px 0 20px;background-color: #bebec0 !important;}
-  .hb-fielders-glove h2{font-size: 45px; line-height: 55px; margin-bottom: 69px; }  
+.hb-fielders-glove h2{font-size: 45px; line-height: 55px; margin-bottom: 69px; }  
 .hb-fielders-glove h2{color: #454444; margin: 0; text-transform: capitalize; font-weight: 900; text-align: center; margin-bottom: 20px; font-size: 30px; line-height: 36px;}
 .hb-fielders-glove .hb-content{overflow: hidden; padding: 0 15px 30px; margin-bottom: 25px;}
 .hb-fielders-glove h3{font-size: 25px; line-height: 30px; margin-bottom: 25px; color: #fff; font-weight: 400; text-transform: capitalize;}
@@ -920,7 +920,11 @@ border: 2px solid #333;
   .hb-fielders-glove{padding: 70px 0 49px;}
   .hb-fielders-glove h2{font-size: 45px; line-height: 55px; margin-bottom: 69px; }
 }
-
+.hb-fielders-glove .hb-product-price{font-size: 22px; line-height: 1.5; color: #fff; margin-bottom: 30px; width: 100%;}
+.hb-dicrip{width: 100%; color: #fff; padding-top: 45px; margin-bottom: 0;}
+.dicription-box ul{text-align: start; padding: 0;}
+.dicription-box li{font-size: 14px; line-height: 1.5; padding: 0; padding-bottom: 10px;}
+.dicription-box li::before{content: ""; background: url(/public/images/check-list-icon.svg); transform: translateY(6px) ; display: inline-block; margin-right: 10px; width: 21px; height: 21px;}
 @media screen and (max-width: 767px){
   .product-variants #pills-tab li button{font-size: 18px;}
   .product-variants #pills-tab{padding: 0 10px;}
