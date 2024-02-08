@@ -966,7 +966,7 @@ export default function Main() {
                   type="button"
                   onClick={BarNavToggle}
                 >
-                  <img src={`/images/menu.svg`} alt="Ham" />
+                  <img src={`/wp-content/reactpress/apps/builder/build/images/menu.svg`} alt="Ham" />
                 </button>
                 <button type="button" className="btn" onClick={resetConfig}>
                   reset
@@ -1169,7 +1169,7 @@ export default function Main() {
                           >
                             <img
                               className="me-1"
-                              src={`/images/help.svg`}
+                              src={`/wp-content/reactpress/apps/builder/build/images/help.svg`}
                               alt="Help"
                             />
                             help
@@ -1264,7 +1264,7 @@ export default function Main() {
                           >
                             <img
                               className="me-1"
-                              src={`/images/help.svg`}
+                              src={`/wp-content/reactpress/apps/builder/build/images/help.svg`}
                               alt="Help"
                             />
                             help
@@ -1374,7 +1374,7 @@ export default function Main() {
                           >
                             <img
                               className="me-1"
-                              src={`/images/help.svg`}
+                              src={`/wp-content/reactpress/apps/builder/build/images/help.svg`}
                               alt="Help"
                             />
                             help

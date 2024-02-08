@@ -914,6 +914,7 @@ border: 2px solid #333;
   .hb-fielders-glove{padding: 35px 0 29px;}
   .hb-fielders-glove .hb-content{margin-bottom: 30px;}
   .hb-fielders-glove h2{font-size: 40px; line-height: 55px; margin-bottom: 45px; } 
+  .mw-md-100{max-width: 100% !important;}
 }
 @media (min-width: 1199.98px) {
   .hb-fielders-glove{padding: 70px 0 49px;}
@@ -936,4 +937,5 @@ border: 2px solid #333;
   .hb-col-md-2{flex: 0 0 33%; padding: 0 7px !important;}
   .row.p-3{padding: 15px !important;}
   .product-block .data-card{padding: 15px 10px;}
+  .product-img-box .m-auto{height: 450px !important;}
 }

@@ -1,6 +1,6 @@
 import React, { useRef, useMemo } from 'react'
 import { useGLTF,  useTexture, Text } from '@react-three/drei'
-import { useFrame } from '@react-three/fiber';
+import { useFrame, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
 import { flags } from "../constants";
 import { thumb_graphics, thumb_premium_graphics, stamp_flags, stamp_palm, fonts, back_flags, LegendLogo, LegendHorse } from "../constants"
@@ -155,7 +155,7 @@ const EmbroideredLogo = ({ geometry, material, color, position, rotation, scale,
 export function New({rot, base, colors, personalize, personalizeConfig, xPosition, yPosition, zPosition, xRotation, yRotation, zRotation, textures }) {
   const ref = useRef();
 
-  const { nodes, materials } = useGLTF("/Model/Fielder.glb")
+  const { nodes, materials } = useGLTF("/wp-content/reactpress/apps/builder/build/Model/Fielder.glb")
   
   // const myFont = new FontLoader().parse(fontArrayBuffer);
 
@@ -171,8 +171,17 @@ export function New({rot, base, colors, personalize, personalizeConfig, xPositio
     ref.current.rotation.y = rot
   })
 
+  const { viewport } = useThree();
+  const width = viewport.width;
+  const minWidth = 2.835;
+  const maxWidth = 6.75;
+  const scaleFactor = (26 - 16) / (maxWidth - minWidth);
+  const positionFactor = (2.1 - 1.05) / (maxWidth - minWidth);
+  const scale = 16 + (width - minWidth) * scaleFactor;
+  const position = 1.05 + (width - minWidth) * positionFactor;
+
   return (
-    <group dispose={null} position={[0, -2.1, 0]} scale={[26, 26, 26]} ref={ref}>
+    <group dispose={null} position={[0, -1*position, 0]} scale={[scale, scale, scale]} ref={ref}>
 
     {base["Kip Palm Liner"] === "Kip Palm Liner (+$15)" && (
       <mesh position={[-0.009, 0.044, 0.029]} rotation={[0.09375*Math.PI, -0.125*Math.PI, 0.03125*Math.PI]} scale={0.008}>
@@ -1273,4 +1282,4 @@ export function New({rot, base, colors, personalize, personalizeConfig, xPositio
   )
 }
 
-useGLTF.preload("/Model/Fielder.glb")
+useGLTF.preload("/wp-content/reactpress/apps/builder/build/Model/Fielder.glb")
