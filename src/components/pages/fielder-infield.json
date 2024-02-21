@@ -1,0 +1,62 @@
+[
+    {
+      "name": "Legend Edition",
+      "image": "/images/fielder.png",
+      "price": "$225",
+      "highlights": [
+        "The Signature Special Edition 'Legend Series'",
+        "Most Customizable Model",
+        "Exclusive leather colors/prints",
+        "Mesh and Inlay available",
+        "Available in Sizes: 11, 11.25, 11.5, 11.75, 12, 12.25",
+        "Best available option"
+      ]
+    },
+    {
+      "name": "Crown Style Glove",
+      "image": "/images/fielder.png",
+      "price": "$199",
+      "highlights": [
+        "Special edition Crown design glove",
+        "Good For: Youth to Pro Level",
+        "Available in sizes: 11.25, 11.5, 11.75, 12"
+      ]
+    },
+    {
+      "name": "Pro Star Edition",
+      "image": "/images/fielder.png",
+      "price": "$185",
+      "highlights": [
+        "US Steerhide",
+        "Available in Single or Dual Welting",
+        "Inlay Options Available",
+        "Select special colors/prints available",
+        "Available in sizes: 11.25, 11.5, 11.75, 12, 12.25"
+      ]
+    },
+    {
+      "name": "F-5 Fast Custom",
+      "image": "/images/fielder.png",
+      "price": "$160",
+        "highlights": [
+          "The Fastest Custom Available",
+          "With shipping times as soon as 2 to 3 weeks, this is the fastest Legend glove you can own!",
+          "US Steerhide",
+          "Minimal Color options",
+          "Short and Quick Break-in Time having your glove game ready in no time!",
+          "Available in sizes: 11.25, 11.5, 11.75, 12, 12,25"
+        ]
+    },
+    {
+      "name": "Mini Trainers Mitt",
+      "image": "/images/fielder.png",
+      "price": "$120",
+      "highlights": [
+          "Prepare For Greatness",
+          "Hone your skills at your postion with this mini trainers mitt",
+          "Customization Options Available",
+          "Available in size: 9.5"
+      ]
+    }
+]
+  
